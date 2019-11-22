@@ -1,0 +1,27 @@
+.bg-user-invalid {
+  @extend .bg-warning-light;
+}
+
+.user_container {
+  border-bottom: $panel-border;
+}
+
+.user_management {
+  height: 100%;
+  overflow: hidden;
+}
+
+.user_management .search_users form {
+  margin: 0;
+}
+
+.user_management table {
+  display: block;
+  height: 100%;
+  overflow: auto;
+  border: 0 none;
+}
+
+.user_management .backform-tab {
+  height: calc(100% - 75px);
+}
