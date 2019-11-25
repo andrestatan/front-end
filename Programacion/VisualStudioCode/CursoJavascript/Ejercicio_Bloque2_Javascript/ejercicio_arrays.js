@@ -48,6 +48,9 @@ document.write(elemento+" <br>");
 console.log("Array invertido");
 console.log(elemento);
 
+// Punto numero 5
+document.write("El documento tiene "+elemento.length+" elementos <br>");
+console.log("El documento tiene "+elemento.length+" elementos");
 //Punto numero 6
 var verificacione=window.prompt("Ingrese el dato para buscarlo");
 
