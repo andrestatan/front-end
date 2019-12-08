@@ -8,13 +8,14 @@ import { PersonaComponent } from './persona/persona.component';
 @NgModule({
   declarations: [
     AppComponent, 
-    personasComponent, PersonaComponent
+    personasComponent,
+    PersonaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, personasComponent, PersonaComponent]
 })
 export class AppModule { }
