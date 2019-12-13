@@ -5,9 +5,9 @@
 //var identificacion=document.getElementById("prueba");
 var identificacion=document.querySelector("#prueba");
 
-function cambio(color){
-
-    identificacion.style.background=color;
+function cambio(){
+    var colores=window.prompt("Ingrese el color a usar");
+    identificacion.style.background=colores;
 }
 
 
@@ -16,6 +16,7 @@ identificacion.style.background= "black";
 identificacion.style.color="white";
 identificacion.style.border="10px white";
 identificacion.className="cambio";
+identificacion.style.padding="20px";
 
 console.log(identificacion);
 
