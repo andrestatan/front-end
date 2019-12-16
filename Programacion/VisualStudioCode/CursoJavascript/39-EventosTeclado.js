@@ -8,11 +8,11 @@ window.addEventListener("load",function(){
 var input=document.querySelector("#campoUno");
 
 input.addEventListener("focus",function(){
-    console.log("prueba de focus");
+    console.log("Estas Dentro del Input");
 })
 
 input.addEventListener("blur",function(){
-    console.log("prueba de blur");
+    console.log("Acabaste de salir del Input");
 })
 
 input.addEventListener("keydown",function(){
