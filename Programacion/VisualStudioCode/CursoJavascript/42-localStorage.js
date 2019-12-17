@@ -20,7 +20,7 @@ localStorage.setItem("titulo","Curso de JS");
 //Recuperar Elemento y meterlo en pag WEB
 
 
-document.querySelector("#pelis").innerHTML = localStorage.getItem("titulo");
+//document.querySelector("#pelis").innerHTML = localStorage.getItem("titulo");
 
 var pelicula={
     titulo:"pokemon",
@@ -31,4 +31,7 @@ localStorage.setItem("usuario",JSON.stringify(pelicula));
 
 var user=JSON.parse(localStorage.getItem("usuario"))
 
-console.log(user)
+//console.log(user);
+document.querySelector("#datos").append(" "+user.titulo+" archivo Jason "+user.anio);
+
+localStorage.removeItem("titulo")
