@@ -953,3 +953,15 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-01-06 17:29:15.956
 !MESSAGE executing callback sts4.classpath.WffNeZIi SUCCESS [done]
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-06 18:06:40.057
+!MESSAGE No repository found at file:/C:/Program%20Files/Spring_Tool_Suite_4/configuration/org.eclipse.osgi/201/data/listener_1925729951/.
+
+!ENTRY org.eclipse.ui 2 2 2020-01-06 18:34:14.479
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.jdt.debug 2 0 2020-01-06 22:27:49.576
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.eclipse.equinox.security 1 0 2020-01-06 23:20:21.842
+!MESSAGE New keyring password generated. 
