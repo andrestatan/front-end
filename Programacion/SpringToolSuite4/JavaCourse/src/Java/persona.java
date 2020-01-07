@@ -1,7 +1,7 @@
 package Java;
 
 public class persona {
-	
+	 
 	private String nombre;
 	private double sueldo;
 	private boolean eliminado;

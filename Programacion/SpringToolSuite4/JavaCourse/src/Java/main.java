@@ -1,8 +1,9 @@
 package Java;
+import java.util.Scanner;
 
 public class main {
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
 		persona persona= new persona("juan",5000,false);
 		
@@ -14,7 +15,6 @@ public class main {
 		System.out.println("el sueldo de la persona es: "+persona.getSueldo());
 		System.out.println("la Persona fue borrada del sistema? "+persona.isEliminar());
 		
-
 	}
 
 }
