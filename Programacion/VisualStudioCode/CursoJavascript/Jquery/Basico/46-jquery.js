@@ -13,7 +13,6 @@ $(document).ready(function(){
     pruebas.css("background","red")
     .css("color","white");
     
-
     // Selector de Clase
     var clase= $(".prueba")
     clase.css("background","blue");
@@ -21,7 +20,22 @@ $(document).ready(function(){
 
     var borde=$(".sinBorde");
     borde.click(function(){
-        
-
+        console.log("clickeado")
+        $(this).addClass("clase");
     });
+    //Selectores por etiqueta
+    var parrafo=$("p");
+    parrafo.dblclick(function(){
+        if($(this).hasClass("clase")){
+            $(this).removeClass("clase");
+            $(this).addClass("prueba");
+        }
+        
+    })
+    $('[title="Google"]').css("background","#ccc");
+
+    //Otros
+    //$("p,a").addClass("margenSuperior");
+    
+    console.log($("#caja").find(".resaltado"));
     })
