@@ -1,0 +1,14 @@
+*{
+    margin:10px;
+}
+#caja{
+    height: 300px;
+    width: 300px;
+    background:lightblue;
+    border: black dashed 2px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+}
