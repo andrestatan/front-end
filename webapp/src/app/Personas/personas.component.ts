@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector:'app-personas',
@@ -10,12 +10,23 @@ import { Component } from '@angular/core';
 export class personasComponent{
 
 agregarPersona= false;    
-nombrePersona:string = "Andres";
-apellidoPersona:string = "Posada";
-private edad:number = 22;
+agregarPersonaStatus="No se ha agregado alguna persona";
+tituloPersona="Hola mundo";
 
-getEdad():number{
-    return this.edad;
-}
+constructor(){
+    setTimeout(
+        ()=>{
+            this.agregarPersona=true;
+        }
+        ,3000);
+    }
+
+    onCrearPersona(){
+        this.agregarPersonaStatus="Adicion exitosa";
+    }
+
+    onModificarPersona(event:Event){
+        this.tituloPersona=(<HTMLInputElement>event.target).value;
+    }
 }
 
