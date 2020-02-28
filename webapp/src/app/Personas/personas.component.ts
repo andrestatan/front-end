@@ -12,6 +12,7 @@ export class personasComponent{
 agregarPersona= false;    
 agregarPersonaStatus="No se ha agregado alguna persona";
 tituloPersona="Hola mundo";
+verificacion=false;
 
 constructor(){
     setTimeout(
@@ -22,6 +23,7 @@ constructor(){
     }
 
     onCrearPersona(){
+        this.verificacion=true;
         this.agregarPersonaStatus="Adicion exitosa";
     }
 

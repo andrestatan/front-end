@@ -5,10 +5,11 @@
                     <label>Titulo de Persona</label>
                     <input type="text"  [(ngModel)]="tituloPersona" class="form-control">{{tituloPersona}}
                     <button [disabled]="!agregarPersona" (click)="onCrearPersona()" class="btn btn-primary"> agregar persona </button>
-                    <p>{{agregarPersonaStatus}}</p>
-                  
-                      
+                    <p *ngIf="verificacion; else prueba">{{agregarPersonaStatus}} de la palabra {{tituloPersona}}</p>
                     </div>
+                    <ng-template #prueba>
+                        <p>Todavia no se ah agregado ningun dato</p>
+                    </ng-template>
 
              </div>
          </div>
