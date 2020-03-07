@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {persona} from './persona.modules';
 import { FormsModule } from '@angular/forms';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,9 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   titulo = 'listadoPersonas';
   personas:persona[]=[new persona("Andres","Posada"), new persona("David","Cadena")]
-  nombreInput:string;
-  apellidoInput:string;
-
-  onAgregarPersona(){
-    let persona1=new persona(this.nombreInput,this.apellidoInput);
-    this.personas.push(persona1);
+ 
+  onAgregar(persona:persona){
+    this.personas.push(persona);
   }
+
 }

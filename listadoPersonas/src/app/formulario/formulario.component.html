@@ -1,0 +1,14 @@
+<form class="form-row">
+
+    <label name="nombre">Ingrese su nombre</label>
+    <input type="text" name="nombre" id="Agregar" placeholder="Ingrese el apellido" class="form_control"
+      [(ngModel)]="nombreInput">
+  </form>
+  <form class="form-row">
+    <label name="apellido">Ingrese su apellido</label>
+    <input type="text" name="apellido" id="NuevoApellido" placeholder="Ingrese su apellido" class="form_control"
+      [(ngModel)]="apellidoInput">
+  </form>
+  <div class="btn btn-primary">
+    <button type="submit">agregar</button>
+  </div>
