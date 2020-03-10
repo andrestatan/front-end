@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { from } from 'rxjs';
-import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-operadores',
