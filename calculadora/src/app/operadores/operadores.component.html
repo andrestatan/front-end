@@ -3,15 +3,12 @@
     <div class="col">
       <form>
         <div class="btn-group">
-          <button class="btn btn-primary">Operaciones</button>
-          <button class="btn btn-primary dropdown-toogle dropdown-toogle-split" data-troggle="dropdown">
-            <span class="caret"></span>
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item">Suma</a>
-          </div>
+          <button class="btn btn-primary" (click)="onsuma()">Suma</button>
+          <button class="btn btn-primary" (click)="onresta()">Resta</button>
+          <button class="btn btn-primary" (click)="onMulti()">Multiplicacion</button>
+          <button class="btn btn-primary" (click)="onDivision()">Division</button>
         </div>
-
+          <p>{{resultado}}</p>
 
       </form>
     </div>
