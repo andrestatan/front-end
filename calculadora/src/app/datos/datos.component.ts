@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-datos',
@@ -6,7 +6,7 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./datos.component.css']
 })
 export class DatosComponent implements OnInit {
-  @Output () datos:number;
+
 
   constructor() { }
 

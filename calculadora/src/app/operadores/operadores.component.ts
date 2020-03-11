@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { from } from 'rxjs';
+import { datos } from '../app.valor.component';
 
 @Component({
   selector: 'app-operadores',
@@ -7,25 +8,26 @@ import { from } from 'rxjs';
   styleUrls: ['./operadores.component.css']
 })
 export class OperadoresComponent implements OnInit {
-  @Input()  numero1:number;
-  @Input() numero2:number;
-  resultado:number;
-  constructor() { }
+  @Input() numeroa:number;
+  @Input() numerob:number;
+  resultado: number;
+
+   constructor() { }
 
   ngOnInit(): void {
 
   }
 
   onsuma(){
-    this.resultado=this.numero1+this.numero2;
+    this.resultado=this.numeroa+this.numerob;
   }
   onresta(){
-    this.resultado=this.numero1+this.numero2;
+    this.resultado=this.numeroa-this.numerob;
   }
   onMulti(){
-    this.resultado=this.numero1+this.numero2;
+    this.resultado=this.numeroa*this.numerob;
   }
   onDivision(){
-    this.resultado=this.numero1+this.numero2;
+    this.resultado=this.numeroa/this.numerob;
   }
 }
