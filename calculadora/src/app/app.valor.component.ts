@@ -1,6 +1,6 @@
 export class datos{
 
-  constructor(numero1:number,numero2:number){
+  constructor(public numero1:number, public numero2:number){
 
   }
 
