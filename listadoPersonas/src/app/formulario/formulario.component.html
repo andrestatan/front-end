@@ -1,14 +1,19 @@
-<form class="form-row">
+<div class="container">
 
-    <label name="nombre">Ingrese su nombre</label>
-    <input type="text" name="nombre" id="Agregar" placeholder="Ingrese el apellido" class="form_control"
-      [(ngModel)]="nombreInput">
-  </form>
-  <form class="form-row">
-    <label name="apellido">Ingrese su apellido</label>
-    <input type="text" name="apellido" id="NuevoApellido" placeholder="Ingrese su apellido" class="form_control"
-      [(ngModel)]="apellidoInput">
-  </form>
-  <div class="btn btn-primary">
-    <button type="submit" (click)="onAgregarPersona()">agregar</button>
+<form>
+  <div class="form-group">
+    <label for="nombre">Ingrese su nombre:</label><br>
+    <input type="text" name="nombre" id="Agregar" placeholder="Por favor digite su nombre" class="form-control" #nombreInput>
   </div>
+  <div class="form-group">
+    <label for="apellido">Ingrese su apellido:</label><br>
+    <input type="text" name="apellido" id="NuevoApellido" placeholder="por favor digite su apellido" class="form-control" #apellidoInput>
+  </div>
+
+  </form>
+  <br><br>
+
+  <div >
+    <button type="submit"  class="btn btn-primary" (click)="onAgregarPersona(nombreInput,apellidoInput)">Agregar</button>
+  </div>
+</div>

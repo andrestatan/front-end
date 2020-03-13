@@ -9,9 +9,9 @@ import { FormularioComponent } from './formulario/formulario.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  titulo = 'listadoPersonas';
+  titulo = 'Listado de Personas';
   personas:persona[]=[new persona("Andres","Posada"), new persona("David","Cadena")]
- 
+
   onAgregar(persona:persona){
     this.personas.push(persona);
   }

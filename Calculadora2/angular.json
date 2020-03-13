@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "listadoPersonas": {
+    "Calculadora2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/listadoPersonas",
+            "outputPath": "dist/Calculadora2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "listadoPersonas:build"
+            "browserTarget": "Calculadora2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "listadoPersonas:build:production"
+              "browserTarget": "Calculadora2:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "listadoPersonas:build"
+            "browserTarget": "Calculadora2:build"
           }
         },
         "test": {
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "listadoPersonas:serve"
+            "devServerTarget": "Calculadora2:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "listadoPersonas:serve:production"
+              "devServerTarget": "Calculadora2:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "listadoPersonas"
+  "defaultProject": "Calculadora2"
 }
