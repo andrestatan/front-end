@@ -9,11 +9,9 @@ import { persona } from '../persona.modules';
 })
 export class FormularioComponent implements OnInit {
   @Output() agregar=new EventEmitter <persona>();
-  nombreInput:string;
-  apellidoInput:string;
 
-  onAgregarPersona(){
-    let persona1=new persona(this.nombreInput,this.apellidoInput);
+  onAgregarPersona(nombreInput:HTMLInputElement,apellidoInput:HTMLInputElement){
+    let persona1=new persona(nombreInput.value,apellidoInput.value);
     this.agregar.emit(persona1);
   }
   constructor() { }
