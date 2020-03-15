@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label for="primerValor" name="valorUno">Ingrese el Primer Valor</label>
+          <input type="number" name="primerValor" class="form-control" [(ngModel)]="valor1">
+        </div>
+        <div class="form-group">
+          <label for="segundoValor" name="valorDos">Ingrese el segundo Valor</label>
+          <input type="number" name="segundoValor" class="form-control" [(ngModel)]="valor2">
+        </div>
+      </form>
+      <div class="boton">
+        <button type="submit" (click)="onSumar()" class="btn btn-primary">Sumar</button>
+      </div>
+    </div>
+  </div>
+</div>

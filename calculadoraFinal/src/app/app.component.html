@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{Titulo}}</h1>
+      <p>{{resumen}}</p>
+      <app-formulario (agregar)="onResultado($event)"></app-formulario>
+      <app-resultado [total]="resultad"></app-resultado>
+    </div>
+  </div>
+</div>
