@@ -22,8 +22,7 @@ export class FormularioComponent implements OnInit {
   }
   onAgregarPersona(){
     let persona1=new persona(this.nombre.nativeElement.value,this.apellido.nativeElement.value);
-    //this.servicio.imprimirConsola("El mensaje de adicion, de nombre: "+persona1.nombre+" y apellido: "+persona1.apellido);
-    this.personaService.agregarPersona(persona1);
+       this.personaService.agregarPersona(persona1);
     }
 
 
