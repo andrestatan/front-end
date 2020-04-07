@@ -1,5 +1,6 @@
 import { heroes } from './hero.service';
 
+
 export const Hero : heroes[]=[
 
   { valor: 11, identificacion: 'Dr Nice' },
@@ -13,7 +14,3 @@ export const Hero : heroes[]=[
   { valor: 19, identificacion: 'Magma' },
   { valor: 20, identificacion: 'Tornado' }
 ]
-
-
-
-

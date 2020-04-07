@@ -5,15 +5,17 @@
   <input type="text" name="adicion" [(ngModel)]="adicionar" placeholder="Ingrese el nombre"/>
 </div>
 
-<div class="heroes">
- <li *ngFor="let Hero of Hero" (click)="onSelect(Hero)">
+<ul class="heroes">
+ <li *ngFor="let Hero of Hero"   [class.selected]="heroe===seleccion" (click)="onSelect(Hero)" >
+
         <span class="badge"> {{Hero.valor}}</span>  {{Hero.identificacion| lowercase}}
  </li>
-</div><div>
-  <label>{{seleccion.valor}}</label>
-</div>
+
+</ul>
+
+<app-listado-heroe [hero]="seleccion"></app-listado-heroe>
+
 
 <!-- <h3>Listado Heroes</h3>
 <div><span>Id: </span>{{heroes.identificacion | uppercase}}</div>
 <div><span>Valor: </span>{{heroes.valor}}</div> -->
-

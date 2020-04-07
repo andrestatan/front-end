@@ -12,13 +12,8 @@ export class HeroeComponent implements OnInit {
   primer: string = "Yamato";
   @Input() adicionar: string;
   Hero = Hero;
-  seleccion: heroes;
-/*
-  heroes: heroes = {
-    identificacion: "Dragon",
-    valor: 3000
-  }; */
 
+  seleccion: heroes;
   onSelect(heroes:heroes):void{
     this.seleccion=heroes;
   }
@@ -31,4 +26,3 @@ constructor() { }
   }
 
 }
-
