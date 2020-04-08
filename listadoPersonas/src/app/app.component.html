@@ -1,8 +1,7 @@
 <div class="container">
   <h1>{{titulo}}</h1>
    <hr/>
-   <app-formulario (agregar)="onAgregar($event)">
-
-   </app-formulario>
-  <app-persona *ngFor="let person of personas; let a =index" [persona]="person" [indice]="a"></app-persona>
+   <app-formulario></app-formulario>
+<hr>
+  <app-persona *ngFor="let person of personas; let a =index" [persona]="person" [indice]="a" ></app-persona>
 </div>
