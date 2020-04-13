@@ -1,0 +1,17 @@
+.campo1{
+  background-color: tomato;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  border-color:black 2px solid;
+}
+.campo2{
+  background-color: green;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  border-color:black 2px solid;
+}
+.clase{
+ margin:0px;
+}
