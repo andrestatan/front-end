@@ -1,25 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { EncabezadoComponent } from './encabezado/encabezado.component';
-import { OpcionesComponent } from './opciones/opciones.component';
-import { IngresosComponent } from './ingresos/ingresos.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 import { EgresosComponent } from './egresos/egresos.component';
-import { DatosBasicosComponent } from './datos-basicos/datos-basicos.component';
+import { IngresosComponent } from './ingresos/ingresos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EncabezadoComponent,
-    OpcionesComponent,
-    IngresosComponent,
+    BusquedaComponent,
     EgresosComponent,
-    DatosBasicosComponent
+    IngresosComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
