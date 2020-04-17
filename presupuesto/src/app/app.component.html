@@ -4,12 +4,12 @@
          {{title}}
       </div>
 
-      <div class="presupuesto_valor">+ 2,345.64</div>
+      <div class="presupuesto_valor">{{totalValores() | currency}}</div>
 
       <div class="presupuesto_ingreso limpiarEstilos">
           <div class="presupuesto_ingreso--texto">Ingresos</div>
           <div class="right">
-              <div class="presupuesto_ingreso--valor">+ 4,300.00</div>
+              <div class="presupuesto_ingreso--valor">{{ingresosTotal|currency}}</div>
               <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
           </div>
       </div>
@@ -17,7 +17,7 @@
       <div class="presupuesto_egreso limpiarEstilos">
           <div class="presupuesto_egreso--text">Egresos</div>
           <div class="right limpiarEstilos">
-              <div class="presupuesto_egreso--valor">- 1,954.36</div>
+              <div class="presupuesto_egreso--valor">{{egresosTotal |currency}}</div>
               <div class="presupuesto_egreso--porcentaje">45%</div>
           </div>
       </div>
@@ -27,8 +27,10 @@
 
 
 <app-busqueda></app-busqueda>
+
+<div class="contenedor limpiarEstilos">
 <app-ingresos>/</app-ingresos>
 <app-egresos></app-egresos>
 
-
+</div>
 

@@ -129,6 +129,19 @@ body {
     transition: border 0.3s;
 }
 
+
+.agregarMenos {
+  width: 55px;
+  border: 1px solid #FF5049;
+  height: 44px;
+  font-size: 18px;
+  color: inherit;
+  background-color: #fff;
+  margin-right: 10px;
+  font-weight: 300;
+  transition: border 0.3s;
+}
+
 .agregar_descripcion,
 .agregar_valor {
     border: 1px solid #e7e7e7;
