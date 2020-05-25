@@ -15,9 +15,14 @@
 	padding:12px;
 }
 .TituloEncabezados{
-	color: blue;
+	color: darkblue;
 	font-size: Arial, Helvetica, sans-serif;
-	font-size: 20px;
-	text-align: center;
+	font-size: 30px;
+	text-align: left;
 	
+}
+.texto{
+	padding: 20px;
+	font-size: Arial, Helvetica, sans-serif;
+
 }
