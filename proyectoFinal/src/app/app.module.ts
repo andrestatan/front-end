@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { IntroduccionComponent } from './introduccion/introduccion.component';
 import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas.component';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
+import { EliminacionComponent } from './eliminacion/eliminacion.component';
+import { ModificacionComponent } from './modificacion/modificacion.component';
+import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
+import { PopUpsComponent } from './pop-ups/pop-ups.component';
+import { AdicionComponent } from './adicion/adicion.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,12 @@ import { BienvenidoComponent } from './bienvenido/bienvenido.component';
 	EncabezadoComponent,
 	IntroduccionComponent,
 	ConsultaPersonasComponent,
-	BienvenidoComponent
+	BienvenidoComponent,
+	EliminacionComponent,
+	ModificacionComponent,
+	PiePaginaComponent,
+	PopUpsComponent,
+	AdicionComponent
   ],
   imports: [
     BrowserModule,
