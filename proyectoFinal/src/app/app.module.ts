@@ -12,6 +12,8 @@ import { ModificacionComponent } from './modificacion/modificacion.component';
 import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
 import { PopUpsComponent } from './pop-ups/pop-ups.component';
 import { AdicionComponent } from './adicion/adicion.component';
+import { fechas } from './servicios/fechas.servicio.service';
+import { FechasString } from './servicios/fechasString.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { AdicionComponent } from './adicion/adicion.component';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [fechas,FechasString],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
