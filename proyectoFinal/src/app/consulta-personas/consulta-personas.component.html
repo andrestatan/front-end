@@ -1,1 +1,10 @@
-<p>consulta-personas works!</p>
+<div class="Consultas">
+    <div>
+        <h1  class="TituloEncabezados">{{titulo}}</h1>
+    </div>
+
+    <ul *ngFor="let a of atributos; index as i">
+        <li>{{i}} {{a.employee_name}}</li>
+    </ul>
+
+</div>

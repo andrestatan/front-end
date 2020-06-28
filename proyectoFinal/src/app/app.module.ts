@@ -9,11 +9,13 @@ import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
 import { EliminacionComponent } from './eliminacion/eliminacion.component';
 import { ModificacionComponent } from './modificacion/modificacion.component';
-import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
 import { PopUpsComponent } from './pop-ups/pop-ups.component';
 import { AdicionComponent } from './adicion/adicion.component';
 import { fechas } from './servicios/fechas.servicio.service';
 import { FechasString } from './servicios/fechasString.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DatosService } from './servicios/datos.servicio.service';
+import { datosAtributos } from './model/datos.model';
 
 @NgModule({
   declarations: [
@@ -25,15 +27,15 @@ import { FechasString } from './servicios/fechasString.service';
 	BienvenidoComponent,
 	EliminacionComponent,
 	ModificacionComponent,
-	PiePaginaComponent,
 	PopUpsComponent,
-	AdicionComponent
+  AdicionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [fechas,FechasString],
+  providers: [fechas,FechasString,DatosService,datosAtributos],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
