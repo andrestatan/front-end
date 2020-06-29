@@ -17,11 +17,7 @@ export class ConsultaPersonasComponent implements OnInit {
 
   procesarDatos(){this.datos.getEmpleadosGeneral().subscribe((data) =>{ this.atributos=data['data']})}
   
-  envioDatos(){
  
-    
-  }
-
       
 
 
