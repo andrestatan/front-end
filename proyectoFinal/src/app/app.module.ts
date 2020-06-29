@@ -16,6 +16,7 @@ import { FechasString } from './servicios/fechasString.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DatosService } from './servicios/datos.servicio.service';
 import { datosAtributos } from './model/datos.model';
+import { TablaComponent } from './tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { datosAtributos } from './model/datos.model';
 	EliminacionComponent,
 	ModificacionComponent,
 	PopUpsComponent,
-  AdicionComponent
+  AdicionComponent,
+  TablaComponent
   ],
   imports: [
     BrowserModule,

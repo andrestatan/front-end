@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatosService } from '../servicios/datos.servicio.service';
 import { datosAtributos } from '../model/datos.model'
 
@@ -9,15 +9,21 @@ import { datosAtributos } from '../model/datos.model'
 })
 export class ConsultaPersonasComponent implements OnInit {
   titulo='Tabla Resultados';
+  @Output() envio= new EventEmitter <any>();
   atributos;
   constructor(private datos:DatosService) { }
   valorFinal
-  ngOnInit(){this.procesarDatos()}
+  ngOnInit(){this. procesarDatos()}
 
-  procesarDatos(){
-    this.datos.getEmpleadosGeneral().subscribe(
-      (data) =>{
-        this.atributos=data['data']
-     })
-    }
+  procesarDatos(){this.datos.getEmpleadosGeneral().subscribe((data) =>{ this.atributos=data['data']})}
+  
+  envioDatos(){
+ 
+    
+  }
+
+      
+
+
+
 } 
