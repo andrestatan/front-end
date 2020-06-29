@@ -15,9 +15,29 @@
 	padding:12px;
 }
 .TituloEncabezados{
-	color: blue;
+	color: darkblue;
 	font-size: Arial, Helvetica, sans-serif;
-	font-size: 20px;
-	text-align: center;
-	
+	font-size: 30px;
+	text-align: left;
+}
+.texto{
+	padding: 20px;
+	font-size: Arial, Helvetica, sans-serif;
+	align-items: center;
+	text-justify: center;
+}
+.BotonEsquina{
+	background:lightgray;
+	padding:12px;
+	text-align: right;
+	align-self: auto;
+}
+.piePagina{
+	background:darkblue;
+	padding: 5px;
+	width: 98%;
+	color:white;
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+bottom: 0 !important;
 }
