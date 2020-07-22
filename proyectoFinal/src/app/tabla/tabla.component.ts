@@ -4,28 +4,27 @@ import { datosAtributos } from '../model/datos.model';
 @Component({
   selector: 'tabla',
   templateUrl: './tabla.component.html',
-  styleUrls: ['./tabla.component.css','./tabla.component.css']
+  styleUrls: ['./tabla.component.css','../app.component.css']
 })
 export class TablaComponent implements OnInit {
 
   constructor(private datos:datosAtributos) {}
-  nombre=this.datos.employee_name;
-  edad=this.datos.employee_age;
-  id=this.datos.id;
-  sueldo=this.datos.employee_salary;  
-  arregloNombre: Array <string>=[];
+  id: Array<string>=[];
+  salario: Array <string>=[];
+  edad: Array <string> = [];
+  imagen: Array <string> =[];
+  nombre: Array <string>=[];
+  tabla: Array <string> =[];
+  tituloTablas:Array <string>=["Id","Nombre","Edad","Salario","Imagen"]
   @Input ('arreglo') arreglo;
   @Input ('encabezado') encabezado;
 
-  ngOnInit(): void {}
+  ngOnInit(){}
 
   MuestraDatos(){
-
     if(this.arreglo != undefined){
-      for(let a of this.arreglo){
-        this.arregloNombre.push(a.employee_name)
-      }
-
-    }
+      window.alert("Datos Encontrados")
+    } else {window.alert("Datos No Encontrados")}
   }
+
 }

@@ -1,1 +1,14 @@
-<p> {{MuestraDatos()}}</p>
+<div class="tbala">
+<table class="tablaDatos">
+    <tr>
+        <th *ngFor="let a of tituloTablas" scope="row"> {{a}}</th>
+    </tr>
+    <tr *ngFor="let b of arreglo">
+        <td class="divisionTabla">{{b.id}}</td>
+        <td class="contenidoTabla">{{b.employee_name}}</td>
+        <td class="contenidoTabla">{{b.employee_age}}</td>
+        <td class="contenidoTabla">{{b.employee_salary | number: '3.2-2'}}</td>
+        <td class="contenidoTabla">{{b.profile_image}}</td>
+    </tr>
+</table>
+</div>
