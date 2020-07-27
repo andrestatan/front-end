@@ -17,6 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatosService } from './servicios/datos.servicio.service';
 import { datosAtributos } from './model/datos.model';
 import { TablaComponent } from './tabla/tabla.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table'
+import { CdkColumnDef } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -30,14 +34,18 @@ import { TablaComponent } from './tabla/tabla.component';
 	ModificacionComponent,
 	PopUpsComponent,
   AdicionComponent,
-  TablaComponent
+  TablaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatTableModule
   ],
-  providers: [fechas,FechasString,DatosService,datosAtributos],
-  bootstrap: [AppComponent]
+  providers: [fechas,FechasString,DatosService,datosAtributos,CdkColumnDef],
+  bootstrap: [AppComponent],
+  entryComponents: [AdicionComponent],
 })
 export class AppModule { }
