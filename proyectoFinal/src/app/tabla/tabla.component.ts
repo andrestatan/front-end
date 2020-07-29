@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { datosAtributos } from '../model/datos.model';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'tabla',
@@ -15,12 +17,14 @@ export class TablaComponent implements OnInit {
   edad = this.atributo.employee_age;
   imagen = this.atributo.profile_image;
   nombre = this.atributo.employee_name;
-  tabla: Array <string> =[];
-  tituloTablas:Array <string>=["Id","Nombre","Edad","Salario","Imagen"]
   @Input ('arreglo') arreglo;
   @Input ('encabezado') encabezado;
+  columnasMostrar: any =["id","employee_name","employee_age","employee_salary","profile_image"];
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.confPaginacion();
+  }
 
   MuestraDatos(){
     if(this.arreglo != undefined){
@@ -28,4 +32,7 @@ export class TablaComponent implements OnInit {
     } else {window.alert("Datos No Encontrados")}
   }
 
+  confPaginacion(){
+    
+  }
 }
