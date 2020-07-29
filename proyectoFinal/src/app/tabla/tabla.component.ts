@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { datosAtributos } from '../model/datos.model';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'tabla',
@@ -8,12 +9,12 @@ import { datosAtributos } from '../model/datos.model';
 })
 export class TablaComponent implements OnInit {
 
-  constructor(private datos:datosAtributos) {}
-  id: Array<string>=[];
-  salario: Array <string>=[];
-  edad: Array <string> = [];
-  imagen: Array <string> =[];
-  nombre: Array <string>=[];
+  constructor(private atributo:datosAtributos, private table:MatTableModule) {}
+  id = this.atributo.id;
+  salario =this.atributo.employee_salary;
+  edad = this.atributo.employee_age;
+  imagen = this.atributo.profile_image;
+  nombre = this.atributo.employee_name;
   tabla: Array <string> =[];
   tituloTablas:Array <string>=["Id","Nombre","Edad","Salario","Imagen"]
   @Input ('arreglo') arreglo;
