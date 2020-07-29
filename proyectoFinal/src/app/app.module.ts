@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table'
 import { CdkColumnDef } from '@angular/cdk/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,11 @@ import { CdkColumnDef } from '@angular/cdk/table';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [fechas,FechasString,DatosService,datosAtributos,CdkColumnDef],
   bootstrap: [AppComponent],
-  entryComponents: [AdicionComponent],
+  entryComponents: [AdicionComponent,EliminacionComponent,PopUpsComponent],
 })
 export class AppModule { }

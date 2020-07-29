@@ -3,6 +3,7 @@ import { DatosService } from '../servicios/datos.servicio.service';
 import { datosAtributos } from '../model/datos.model';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { AdicionComponent } from '../adicion/adicion.component';
+import { EliminacionComponent } from '../eliminacion/eliminacion.component';
 
 
 @Component({
@@ -27,15 +28,17 @@ export class ConsultaPersonasComponent implements OnInit {
  verificacionAdicion(){
    const dialogConfig= new MatDialogConfig();
   dialogConfig.disableClose=false;
-  dialogConfig.autoFocus =true;
+  dialogConfig.autoFocus =false;
   dialogConfig.width= "50%";
   this.dialog.open(AdicionComponent,dialogConfig)
  }
  
- verificacionEliminacion(): boolean{
-  this.eliminar=(!this.eliminar)?true:false;
-  this.validacionError();
-  return this.eliminar;
+ verificacionEliminacion(){
+  const dialogConfig= new MatDialogConfig();
+  dialogConfig.disableClose=false;
+  dialogConfig.autoFocus =false;
+  dialogConfig.width= "50%";
+  this.dialog.open(EliminacionComponent,dialogConfig)
  }
 
  validacionError(){
