@@ -4,6 +4,7 @@ import { datosAtributos } from '../model/datos.model';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { AdicionComponent } from '../adicion/adicion.component';
 import { EliminacionComponent } from '../eliminacion/eliminacion.component';
+import { PopUpsComponent } from '../pop-ups/pop-ups.component';
 
 
 @Component({
@@ -30,7 +31,9 @@ export class ConsultaPersonasComponent implements OnInit {
   dialogConfig.disableClose=false;
   dialogConfig.autoFocus =false;
   dialogConfig.width= "50%";
-  this.dialog.open(AdicionComponent,dialogConfig)
+  this.dialog.open(AdicionComponent,dialogConfig);
+  this.cambio=true;
+  this.validacionError()
  }
  
  verificacionEliminacion(){
@@ -38,12 +41,19 @@ export class ConsultaPersonasComponent implements OnInit {
   dialogConfig.disableClose=false;
   dialogConfig.autoFocus =false;
   dialogConfig.width= "50%";
-  this.dialog.open(EliminacionComponent,dialogConfig)
+  this.dialog.open(EliminacionComponent,dialogConfig);
+  this.eliminar=true;
+  this.validacionError()
  }
 
  validacionError(){
    if(this.cambio && this.eliminar){
      window.alert("no puedes activar ambos elementos");
+     const dialogConfig= new MatDialogConfig();
+     dialogConfig.disableClose=false;
+     dialogConfig.role="alertdialog";
+     dialogConfig.width= "50%";
+     this.dialog.open(PopUpsComponent,dialogConfig);
      this.cambio=false;
      this.eliminar=false;
    }

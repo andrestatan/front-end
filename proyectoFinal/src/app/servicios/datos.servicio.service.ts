@@ -8,11 +8,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 
 export class DatosService{
- url:'http://dummy.restapiexample.com/';
+ url:'https://jsonplaceholder.typicode.com';
 
  constructor(private http:HttpClient){}
 
  getEmpleadosGeneral():Observable <datosAtributos>{
-   return this.http.get <datosAtributos>("http://dummy.restapiexample.com/api/v1/employees")
+   return this.http.get <datosAtributos>("https://jsonplaceholder.typicode.com/todos")
   }
 }
