@@ -24,6 +24,9 @@ import { CdkColumnDef } from '@angular/cdk/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import {MatListModule} from '@angular/material/list';
 	PopUpsComponent,
   AdicionComponent,
   TablaComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import {MatListModule} from '@angular/material/list';
     MatTableModule,
     MatPaginatorModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule,
+    MatMenuModule
   ],
   providers: [fechas,FechasString,DatosService,datosAtributos,CdkColumnDef],
   bootstrap: [AppComponent],

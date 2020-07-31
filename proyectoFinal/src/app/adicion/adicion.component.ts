@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adicion.component.css']
 })
 export class AdicionComponent implements OnInit {
-
+  newUser="Agregar un nuevo Usuario"
   constructor() { }
 
   ngOnInit(): void {

@@ -1,10 +1,12 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatosService } from '../servicios/datos.servicio.service';
-import { datosAtributos } from '../model/datos.model';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { AdicionComponent } from '../adicion/adicion.component';
 import { EliminacionComponent } from '../eliminacion/eliminacion.component';
 import { PopUpsComponent } from '../pop-ups/pop-ups.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 @Component({
@@ -16,8 +18,10 @@ export class ConsultaPersonasComponent implements OnInit {
   titulo='Tabla Resultados';
   @Output() envio= new EventEmitter <any>();
   atributos;
-  constructor(private datos:DatosService, public dialog:MatDialog) { }
+  constructor(private datos:DatosService, public dialog:MatDialog ) { }
   valorFinal
+  adicion: boolean=false;
+  eliminacion:boolean=false;
   cambio: boolean = false;
   eliminar: boolean =false;
   ngOnInit(){
@@ -26,9 +30,11 @@ export class ConsultaPersonasComponent implements OnInit {
 
   }
 
-  
+  validacionChecks(a){
+
+  }
  verificacionAdicion(){
-   const dialogConfig= new MatDialogConfig();
+ const dialogConfig= new MatDialogConfig();
   dialogConfig.disableClose=false;
   dialogConfig.autoFocus =false;
   dialogConfig.width= "50%";

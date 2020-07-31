@@ -32,7 +32,7 @@ export class TablaComponent implements OnInit {
     
   }
 
-   verificacionDatos(){debugger
+   verificacionDatos(){
      if(this.arreglo!= undefined){
     this.dataSource = new MatTableDataSource(this.arreglo);
     this.dataSource.sort = this.sort;

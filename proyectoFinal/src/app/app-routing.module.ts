@@ -9,13 +9,14 @@ import { EliminacionComponent } from './eliminacion/eliminacion.component';
 import { AdicionComponent } from './adicion/adicion.component';
 
 
+
 const routes: Routes = [
 	{path: '',  component: BienvenidoComponent},
 	{path: 'introduccion',  component: IntroduccionComponent},
 	{path: 'consulta',  component: ConsultaPersonasComponent},
 	{path: 'modificacion',  component: ModificacionComponent},
 	{path: 'eliminacion',  component: EliminacionComponent},
-	{path: 'adicion', component: AdicionComponent}
+	{path: 'adicion', component: AdicionComponent},
 ];
 
 @NgModule({
