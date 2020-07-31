@@ -21,10 +21,11 @@ export class ConsultaPersonasComponent implements OnInit {
   cambio: boolean = false;
   eliminar: boolean =false;
   ngOnInit(){
-    this. procesarDatos();
+    this.datos.getEmpleadosGeneral().subscribe((data) =>{
+      this.atributos=data})
+
   }
 
-  procesarDatos(){this.datos.getEmpleadosGeneral().subscribe((data) =>{ this.atributos=data['data']})}
   
  verificacionAdicion(){
    const dialogConfig= new MatDialogConfig();

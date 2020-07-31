@@ -12,7 +12,8 @@ export class DatosService{
 
  constructor(private http:HttpClient){}
 
- getEmpleadosGeneral():Observable <datosAtributos>{
-   return this.http.get <datosAtributos>("https://jsonplaceholder.typicode.com/todos")
+ getEmpleadosGeneral(): Observable <datosAtributos>{
+   return this.http.get <datosAtributos>("https://jsonplaceholder.typicode.com/posts")
   }
+
 }
