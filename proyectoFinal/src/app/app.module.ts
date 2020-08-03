@@ -7,10 +7,7 @@ import { AppComponent } from './app.component';
 import { IntroduccionComponent } from './introduccion/introduccion.component';
 import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas.component';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
-import { EliminacionComponent } from './eliminacion/eliminacion.component';
-import { ModificacionComponent } from './modificacion/modificacion.component';
 import { PopUpsComponent } from './pop-ups/pop-ups.component';
-import { AdicionComponent } from './adicion/adicion.component';
 import { fechas } from './servicios/fechas.servicio.service';
 import { FechasString } from './servicios/fechasString.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,10 +15,17 @@ import { DatosService } from './servicios/datos.servicio.service';
 import { datosAtributos } from './model/datos.model';
 import { TablaComponent } from './tabla/tabla.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTableModule} from '@angular/material/table'
 import { CdkColumnDef } from '@angular/cdk/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import { AlertasComponent } from './pop-ups/alertas/alertas.component'
+import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
+
 
 @NgModule({
   declarations: [
@@ -31,11 +35,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 	IntroduccionComponent,
 	ConsultaPersonasComponent,
 	BienvenidoComponent,
-	EliminacionComponent,
-	ModificacionComponent,
 	PopUpsComponent,
-  AdicionComponent,
   TablaComponent,
+  AlertasComponent,
+  PiePaginaComponent
+
   ],
   imports: [
     BrowserModule,
@@ -44,10 +48,15 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     BrowserAnimationsModule,
     MatDialogModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatMenuModule
+
   ],
-  providers: [fechas,FechasString,DatosService,datosAtributos,CdkColumnDef],
+  providers: [fechas,FechasString,DatosService,datosAtributos,CdkColumnDef,PopUpsComponent],
   bootstrap: [AppComponent],
-  entryComponents: [AdicionComponent,EliminacionComponent,PopUpsComponent],
+  entryComponents: [PopUpsComponent,AlertasComponent],
 })
 export class AppModule { }

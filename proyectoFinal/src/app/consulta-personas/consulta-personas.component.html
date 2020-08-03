@@ -13,18 +13,30 @@
             search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
             over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </p>
-    </div> <hr>
-    <div class="btn-group">
-        <button (click)="verificacionAdicion()" class="btn btn-primary">Agregar</button>
-        <button (click)="verificacionEliminacion()"  class="btn btn-primary">Eliminar</button>
-    </div>
-    <div>
-        <app-eliminacion *ngIf="eliminar"></app-eliminacion>
-    </div><hr><hr>
-    <div>
-        <tabla [arreglo]="atributos"></tabla>
-    </div>
-    
+        <hr>
+        <div class="btn-group btn-block">
 
-    
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpDatos"
+                [disabled]=adicionar (click)="validacionChecks('adicion'); validacionDatosPopUp('adicion')">
+                Agregar
+            </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpDatos"
+                [disabled]=buscar (click)="validacionChecks('buscar'); validacionDatosPopUp('buscar')">
+                Buscar
+            </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpDatos"
+                [disabled]=eliminar (click)="validacionChecks('eliminar'); validacionDatosPopUp('eliminar')">
+                Eliminar
+            </button>
+        </div>
+        <hr>
+        &nbsp;
+        &nbsp;
+        <div>
+            <tabla [arreglo]="atributos"></tabla>
+        </div>&nbsp;
+
+    </div>
+
 </div>
+<app-pop-ups [tipoDato]="tipoDato" ></app-pop-ups>

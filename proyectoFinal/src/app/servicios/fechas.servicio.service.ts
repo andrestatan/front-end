@@ -18,6 +18,8 @@ export class fechas {
 
     calcularDiaExacto() {
         let diaMes;
+        let Dia;
+        let diaDefinitivo;
         if (this.mes == 0 || this.mes == 2 || this.mes == 4 || this.mes == 6 || this.mes == 7 || this.mes == 9 || this.mes == 11) {
             diaMes = 31
         } else if(this.mes == 3 || this.mes == 5 || this.mes == 8 || this.mes == 10){
@@ -25,7 +27,11 @@ export class fechas {
         } else if(this.mes == 1){
             diaMes=28
         }
-        return diaMes;
+
+        if (this.dia < 10){
+            Dia =  "0" + this.dia;
+        }
+        return diaDefinitivo = (diaMes > this.dia)?Dia:diaMes;
     }
 
     getFechaActualString() {

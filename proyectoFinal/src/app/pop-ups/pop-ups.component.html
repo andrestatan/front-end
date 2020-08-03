@@ -1,1 +1,42 @@
-<p>pop-ups works!</p>
+  <!------------------------------POP UP DE ADICION, ELIMINACION Y BUSQUEDA DE DATOS DEL SERVICIO REST -------------------------->
+  <div class="modal fade" id="popUpDatos" tabindex="-1" role="dialog" aria-labelledby="labelPopUp" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="subtitulo modal-header">
+                    <h2><i class="modal-title" id="labelPopUp">{{icono}}</i>{{titulo}}</h2>
+                </div>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input name="id" #identificacion placeholder="Ingrese un {{id}}" class="form-control">
+                    </div>
+                    &nbsp;
+                    <div class="form-group">
+                        <input name="id" placeholder="Ingrese un {{nombre}}" #identificacion class="form-control">
+                    </div>
+                    &nbsp;
+                    <div class="form-group">
+                        <input name="id" placeholder="Ingrese un {{descripcion}}" #identificacion class="form-control">
+                    </div>
+                </div>
+               
+                &nbsp;
+                &nbsp;
+                <hr>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success" (click)="validacionDeDatosPopUp(true)">Agregar</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger" (click)="validacionDeDatosPopUp(false)">Cancelar</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!------------------------------ALERTAS Y CONFIRMACIONES DEL SISTEMA -------------------------->

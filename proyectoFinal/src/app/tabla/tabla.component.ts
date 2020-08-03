@@ -1,38 +1,46 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { datosAtributos } from '../model/datos.model';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { datosAtributos } from '../model/datos.model';
+import { Data } from '@angular/router';
+import { DatosService } from '../servicios/datos.servicio.service';
 
 @Component({
   selector: 'tabla',
   templateUrl: './tabla.component.html',
-  styleUrls: ['./tabla.component.css','../app.component.css']
+  styleUrls: ['./tabla.component.css', '../app.component.css']
 })
 export class TablaComponent implements OnInit {
 
-  constructor(private atributo:datosAtributos, private table:MatTableModule) {}
-  id = this.atributo.id;
-  salario =this.atributo.employee_salary;
-  edad = this.atributo.employee_age;
-  imagen = this.atributo.profile_image;
-  nombre = this.atributo.employee_name;
-  @Input ('arreglo') arreglo;
-  @Input ('encabezado') encabezado;
-  columnasMostrar: any =["id","employee_name","employee_age","employee_salary","profile_image"];
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  constructor(private data:DatosService) {}
+  @Input('arreglo') arreglo;
+  @Input('encabezado') encabezado;
+  columnasMostrar: any = ["userId", "id", "title", "body"];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  datos;
+  dataSource: MatTableDataSource <atributos>; 
 
-  ngOnInit(){
-    this.confPaginacion();
-  }
+  ngOnInit() { }
 
-  MuestraDatos(){
-    if(this.arreglo != undefined){
-      window.alert("Datos Encontrados")
-    } else {window.alert("Datos No Encontrados")}
-  }
-
-  confPaginacion(){
+  ngOnChanges(): void {
+    
+ this. verificacionDatos()
     
   }
+
+   verificacionDatos(){
+     if(this.arreglo!= undefined){
+    this.dataSource = new MatTableDataSource(this.arreglo);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }}
+}
+export interface atributos{
+  userId: string;
+  id: string;
+  title: string;
+  body: string;
 }

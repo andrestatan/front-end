@@ -1,7 +1,5 @@
 *{
 	margin: auto;
-	background: url("../assets/Imagenes/diseno-futurista-fondo_23-2148503793.jpg") no-repeat center center;
-
 }
 .TituloPrincipal{
 	text-align: center;
@@ -48,11 +46,8 @@
 	align-self: auto;
 }
 .piePagina{
-	background:darkblue;
-	padding: 5px;
-	width: 98%;
-	color:white;
-	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	text-align: left;
 	position: absolute;
 	bottom: 0 !important;
 }
@@ -64,7 +59,7 @@
 	margin-left: 10%;
 }
 th{
-	background:darkblue;
+	background:black;
 	color:white;
 	padding:15px;
 	border:solid 1px black;

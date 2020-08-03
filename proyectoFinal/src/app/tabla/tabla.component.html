@@ -1,37 +1,33 @@
-<div class="container mat-elevation-z8">
-<table mat-table [dataSource]="arreglo" class="table text-center table-bordered mat-elevation-z8">
+<div class="container">
+  <div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="text-center" >
   <!-- name -->
-  <ng-container matColumnDef="id">
+  <ng-container matColumnDef="userId">
     <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Id</th>
     <td mat-cell *matCellDef="let arreglo"> {{ arreglo.id }} </td>
   </ng-container>
 
   <!-- code -->
-  <ng-container matColumnDef="employee_name">
-    <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Nombre</th>
-    <td mat-cell *matCellDef="let arreglo"> {{ arreglo.employee_name }} </td>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Id Usuario</th>
+    <td mat-cell *matCellDef="let arreglo"> {{ arreglo.userId }} </td>
   </ng-container>
 
   <!-- name -->
-  <ng-container matColumnDef="employee_age">
-    <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Edad</th>
-    <td mat-cell *matCellDef="let arreglo"> {{ arreglo.employee_age }} </td>
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Nombre</th>
+    <td mat-cell *matCellDef="let arreglo"> {{ arreglo.title }} </td>
   </ng-container>
 
   <!-- code -->
-  <ng-container matColumnDef="employee_salary">
-    <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Salario</th>
-    <td mat-cell *matCellDef="let arreglo"> {{ arreglo.employee_salary | number: '3.3-3'}} </td>
-  </ng-container>
-
-   <!-- code -->
-   <ng-container matColumnDef="profile_image">
-    <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Imagen Perfil</th>
-    <td mat-cell *matCellDef="let arreglo"> {{ arreglo.profile_image }} </td>
+  <ng-container matColumnDef="body">
+    <th mat-header-cell *matHeaderCellDef class="text-center text-uppercase">Descripcion</th>
+    <td mat-cell *matCellDef="let arreglo" class="text-justify"> {{ arreglo.body}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columnasMostrar" ></tr>
   <tr mat-row *matRowDef="let row; columns: columnasMostrar;"></tr>
 </table>
-<mat-paginator [length]="24" [pageSize]="5" [pageSizeOptions]="[5, 10, 24]"></mat-paginator>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
 </div>
