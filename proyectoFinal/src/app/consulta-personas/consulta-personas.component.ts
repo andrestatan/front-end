@@ -1,13 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DatosService } from '../servicios/datos.servicio.service';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import { AdicionComponent } from '../adicion/adicion.component';
-import { EliminacionComponent } from '../eliminacion/eliminacion.component';
 import { PopUpsComponent } from '../pop-ups/pop-ups.component';
-import {MatMenuModule} from '@angular/material/menu';
-
-
 
 @Component({
   selector: 'app-consulta-personas',
@@ -16,53 +9,59 @@ import {MatMenuModule} from '@angular/material/menu';
 })
 export class ConsultaPersonasComponent implements OnInit {
   titulo='Tabla Resultados';
-  @Output() envio= new EventEmitter <any>();
   atributos;
-  constructor(private datos:DatosService, public dialog:MatDialog ) { }
-  valorFinal
-  adicion: boolean=false;
-  eliminacion:boolean=false;
-  cambio: boolean = false;
-  eliminar: boolean =false;
+  adicionar: boolean;
+  buscar: boolean;
+  eliminar: boolean;
+  active: boolean = false;
+  tipoDato: string;
+
+  @Output() envio= new EventEmitter <any>();
+  
+  constructor(private datos:DatosService, private PopUp:PopUpsComponent) { }
+    
   ngOnInit(){
+
     this.datos.getEmpleadosGeneral().subscribe((data) =>{
       this.atributos=data})
 
-  }
-
-  validacionChecks(a){
+    this.iniciacionIconos();
 
   }
- verificacionAdicion(){
- const dialogConfig= new MatDialogConfig();
-  dialogConfig.disableClose=false;
-  dialogConfig.autoFocus =false;
-  dialogConfig.width= "50%";
-  this.dialog.open(AdicionComponent,dialogConfig);
-  this.cambio=true;
-  this.validacionError()
- }
- 
- verificacionEliminacion(){
-  const dialogConfig= new MatDialogConfig();
-  dialogConfig.disableClose=false;
-  dialogConfig.autoFocus =false;
-  dialogConfig.width= "50%";
-  this.dialog.open(EliminacionComponent,dialogConfig);
-  this.eliminar=true;
-  this.validacionError()
- }
 
- validacionError(){
-   if(this.cambio && this.eliminar){
-     window.alert("no puedes activar ambos elementos");
-     const dialogConfig= new MatDialogConfig();
-     dialogConfig.disableClose=false;
-     dialogConfig.role="alertdialog";
-     dialogConfig.width= "50%";
-     this.dialog.open(PopUpsComponent,dialogConfig);
-     this.cambio=false;
-     this.eliminar=false;
-   }
- }
+  validacionChecks(a: string){
+    switch(a){
+      case "adicion": 
+      this.adicionar=false;
+      this.buscar=true;
+      this.eliminar=true;
+      break;
+      case "buscar": 
+      this.adicionar=true;
+      this.buscar=false;
+      this.eliminar=true;
+      break;
+      case "eliminar": 
+      this.adicionar=true;
+      this.eliminar=false;
+      this.buscar=true;
+      break;
+    }
+  }
+
+  validacionDatosPopUp(valor: string){
+    if(valor != undefined){
+      return this.tipoDato=valor;
+    } else {
+      window.alert("Valor no encontrado")
+    }
+    
+  }
+
+  iniciacionIconos(){
+    this.adicionar=false;
+    this.eliminar=false;
+    this.buscar=false;
+  }
+
 } 

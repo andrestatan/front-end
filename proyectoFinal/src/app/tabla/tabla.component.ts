@@ -23,11 +23,10 @@ export class TablaComponent implements OnInit {
   datos;
   dataSource: MatTableDataSource <atributos>; 
 
-  ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+  ngOnInit() { }
 
-  ngAfterViewInit(): void {
+  ngOnChanges(): void {
+    
  this. verificacionDatos()
     
   }

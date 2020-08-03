@@ -14,17 +14,29 @@
             over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </p>
         <hr>
-        <button [matMenuTriggerFor]="Opciones">Ver Mas</button>
-        <mat-menu #Opciones=matMenu >
-            <button mat-menu-item (click)="verificacionAdicion(); adicion=true" >Agregar</button>
-            <button mat-menu-item (click)="verificacionAdicion(); adicion=true" >Buscar</button>
-            <button mat-menu-item (click)="verificacionEliminacion(); eliminacion=true" >Eliminar</button>
-        </mat-menu>
-    
+        <div class="btn-group btn-block">
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpDatos"
+                [disabled]=adicionar (click)="validacionChecks('adicion'); validacionDatosPopUp('adicion')">
+                Agregar
+            </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpDatos"
+                [disabled]=buscar (click)="validacionChecks('buscar'); validacionDatosPopUp('buscar')">
+                Buscar
+            </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpDatos"
+                [disabled]=eliminar (click)="validacionChecks('eliminar'); validacionDatosPopUp('eliminar')">
+                Eliminar
+            </button>
+        </div>
+        <hr>
+        &nbsp;
+        &nbsp;
+        <div>
+            <tabla [arreglo]="atributos"></tabla>
+        </div>&nbsp;
+
     </div>
-    &nbsp;&nbsp;
-    <div>
-        <tabla [arreglo]="atributos"></tabla>
-    </div>&nbsp;
-    <hr>
+
 </div>
+<app-pop-ups [tipoDato]="tipoDato" ></app-pop-ups>

@@ -4,3 +4,9 @@ export class datosAtributos{
     title: string;
     body: string;
 }
+
+export class usuario{
+    nombre?: string;
+    pass?: string;
+}
+
