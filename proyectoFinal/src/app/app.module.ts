@@ -25,6 +25,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import { AlertasComponent } from './pop-ups/alertas/alertas.component'
 import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
 
   ],
   providers: [fechas,FechasString,DatosService,datosAtributos,CdkColumnDef,PopUpsComponent],

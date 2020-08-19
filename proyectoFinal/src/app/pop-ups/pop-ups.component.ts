@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { AlertasComponent } from './alertas/alertas.component';
+import { FormsModule } from '@angular/forms';
+import { DatosService } from '../servicios/datos.servicio.service';
 
 @Component({
   selector: 'app-pop-ups',
@@ -17,7 +19,8 @@ export class PopUpsComponent implements OnInit {
     
   }
 
-  constructor(public dialog:MatDialog ) { }
+  constructor(public dialog:MatDialog,
+    private datosService: DatosService ) { }
 
   icono: string;
   titulo: string;
@@ -27,7 +30,11 @@ export class PopUpsComponent implements OnInit {
   descripcion : string;
   cambio: boolean = false;
   eliminar: boolean = false;
+  ident: number;
+  nom: string;
+  desc: string;
   @Input() tipoDato: string;
+  @Output() activacionChecks = new EventEmitter <any> ();
   
 
   verificacionManipulacionDatos(){ 
@@ -60,10 +67,11 @@ export class PopUpsComponent implements OnInit {
     }
 
     validacionDeDatosPopUp(valorPopUp: boolean){
-      window.alert(valorPopUp)
       if(valorPopUp){
-        
+        this.datosService.addEmpleadosGeneral();
       }
+      //Reactivar los menus 
+      this.activacionChecks.emit(valorPopUp);
     }
     
 }

@@ -15,7 +15,7 @@ export class ConsultaPersonasComponent implements OnInit {
   eliminar: boolean;
   active: boolean = false;
   tipoDato: string;
-
+  activacionChecks: any;
   @Output() envio= new EventEmitter <any>();
   
   constructor(private datos:DatosService, private PopUp:PopUpsComponent) { }
@@ -27,6 +27,11 @@ export class ConsultaPersonasComponent implements OnInit {
 
     this.iniciacionIconos();
 
+  }
+
+  ngOnChanges(): void { debugger;
+    this.reactivacionChecks(this.activacionChecks)
+    
   }
 
   validacionChecks(a: string){
@@ -64,4 +69,11 @@ export class ConsultaPersonasComponent implements OnInit {
     this.buscar=false;
   }
 
+  reactivacionChecks(a){
+    if(a != undefined){
+      this.adicionar=false;
+      this.eliminar=false;
+      this.buscar=false;
+    }
+  }
 } 

@@ -16,4 +16,11 @@ export class DatosService{
    return this.http.get <datosAtributos>("https://jsonplaceholder.typicode.com/posts")
   }
 
+addEmpleadosGeneral(datosAtributos : datosAtributos){
+  this.http.post("https://jsonplaceholder.typicode.com/posts",datosAtributos)
+  .subscribe(a=>{
+    return a;
+  }, (error)=>{
+      window.alert("Metodo Post No funcional")
+  })}
 }
