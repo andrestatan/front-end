@@ -1,0 +1,22 @@
+<div class="container animated fadeIn slow">
+    <h1>
+        Heroes <small>Marvel y DC</small>
+    </h1>
+    <div class="card-columns">
+        <div class="card animated fadeIn fast" *ngFor="let hero of heroe; let i = index">
+            <img class="card-img-top" src={{hero.img}} alt={{hero.nombre}}>
+            <div class="card-body">
+                <h5>{{hero.nombre}}</h5>
+                <p class='card-text'>
+                  {{hero.bio}}
+                </p>
+                <p class="card-text">
+                  {{hero.aparicion}}
+                </p>
+                <!-- <button type="button" class="btn btn-outline-primary btn-block"> Ver mas...</button> -->
+                <a href="" class="btn btn-outline-primary btn-block" [routerLink]="['/VerMas',i]">ver mas...</a>
+              </div>
+            </div>
+          </div>
+    </div>
+  
