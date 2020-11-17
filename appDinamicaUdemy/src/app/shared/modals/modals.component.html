@@ -1,0 +1,31 @@
+<!-- Modal Alerta -->
+<div class="modal fade mt-5 py-5" id="alerta" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content colorModal11">
+      <div class="container backModal12">
+        <div class="modal-body text-center colorTexto10">
+          <p class="font-weight-light">
+            Política de privacidad y cookies <span (click)="politicaPrivacidad()" class="colorName3 cursor7">
+              AQUÍ
+            </span>
+          </p>
+          <div class="custom-control custom-switch">
+            <input (click)="cambioPrivacidad()" type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label cursor" for="customSwitch1"> <small class="cursor7">He leído y acepto la
+                política de
+                privacidad y cookies</small> </label>
+          </div>
+          <hr>
+          <button *ngIf="modalService.privacidadSeleccionada" type="button"
+            class="btn btn-outline-warning btn-sm" data-dismiss="modal"> <span class="colorName3">No acepto</span>
+          </button>
+          <button (click)="contacto()" *ngIf="!modalService.privacidadSeleccionada" type="button"
+            class="btn btn-outline-warning btn-sm"><span class="colorName3">
+              Continuar </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
