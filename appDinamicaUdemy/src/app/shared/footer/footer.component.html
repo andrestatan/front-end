@@ -1,1 +1,76 @@
-<p>footer works!</p>
+<div class="container fixed-bottom colorBody1">
+    <div class="container text-center colorNavbar2">
+
+        <button (click)="privacidad()" type="button" class="btn btn-warning btn-sm cookies8 mt-n1">
+            <p>Politica y privacidad y coockies</p>
+        </button>
+
+        <div class="row">
+            <div class="col">
+                <a (click)="whatsApp()" class="cursor7">
+                    <i class="fab fa-whatsapp mr-3 ml-3"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook mr-3"></i>
+                </a>
+                <a href="mailto:FedeDJ@FedericaDJ.es" target="_blank">
+                    <i class="fas fa-envelope mr-3"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <i class="fab fa-linkedin-in mr-3"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fab fa-instagram mr-3"></i>
+                </a>
+                <a href="https://www.twitter.com/" target="_blank">
+                    <i class="fab fa-twitter mr-3"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <p class="mb-1">
+            <small class="text-muted colorName3">
+                Copyrigth &copy; &nbsp; Jhonnatan A. Posada ({{anio}}) &nbsp; Todos los Derechos Reservados
+
+            </small>
+        </p>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+<!-- PopUp de privacidad y coockies -->
+<div class="modal fade" id="privacidad" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content colorModal11">
+            <div class="container backModal12">
+                <div class="modal-body text-center colorTexto10">
+                    <h4 class="colorName3 text-uppercase mb-4">
+                        <u>Politica de Privacidad y Cookies</u>
+                    </h4>
+                    <p class="font-weight-light text-justify">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis pariatur similique, excepturi
+                        eveniet aperiam possimus, eum amet nostrum magni qui nam sed voluptates inventore delectus.
+                        Quod rem iste est minima?
+                    </p>
+                    <div class="container text-center">
+                        <button *ngIf="modalService.privacidad" (click)="salir()" class="btn btn-outline-warning colorName3"
+                          type="button">
+                          <i class="fas fa-check"></i>
+                        </button>
+                        <button *ngIf="!modalService.privacidad" (click)="irAlerta()" class="btn btn-outline-warning colorName3"
+                          type="button">
+                          <i class="fas fa-check"></i>
+                        </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ import { IncicioComponent } from './incicio/incicio.component';
 import { AjustesComponent } from './ajustes/ajustes.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ModalsComponent } from './shared/modals/modals.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     IncicioComponent,
     AjustesComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ModalsComponent
   ],
   imports: [
     BrowserModule,
