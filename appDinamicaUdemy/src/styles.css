@@ -10,7 +10,6 @@ html {
   font-size: 13px;
 }
 
-
 .fa-whatsapp {
 color: #25D366;
 }
@@ -28,6 +27,11 @@ color: #C13584 !important;
 }
 .fa-twitter {
 color: #00acee;
+}
+
+.fa-at,
+.fa-comment {
+    color: rgba(255, 255, 0, 0.7) !important;
 }
 
 .badge-warning {
@@ -49,6 +53,27 @@ color: #00acee;
 
 .mt-n1 {
   margin-top: -1.2rem !important;
+}
+
+.btn-warning {
+    background-color: rgb(255, 255, 57)  !important;
+    color: black !important;
+    font-weight: 620;
+}
+
+.btn-warning:hover {
+    background-color: yellow !important;
+    font-weight: 680;
+}
+
+.tooltip-inner {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    color: yellow !important;
+}
+
+.form-control:focus {
+  border-color: yellow !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 0, 0.25) !important
 }
 
 .colorBody1 {
@@ -121,3 +146,37 @@ color: #00acee;
     color: yellow !important;
     border: 10px inset yellow;
 }
+
+.backContacto13 {
+    background-color: rgb(0, 0, 0) !important;
+    border: 1px solid yellow;
+}
+
+.backInput14 {
+    background-color: rgb(0, 0, 0) !important;
+    border: 1px solid yellow;
+    color: rgb(194, 194, 194) !important;
+    text-align: left;
+}
+
+.backInput15 {
+    background-image: url('./assets/img/fondo2.jpg');
+    border: 1px solid yellow;
+    color: yellow !important;
+    text-align: center;
+}
+
+.colorNegro16 {
+  /* En producción dejadlo transparente */
+  color: yellow;
+}
+
+.backInput17 {
+    background-image: url('./assets/img/navfoo.jpg');
+    border: 1px solid yellow;
+    color: rgb(194, 194, 194) !important;
+    text-align: center;
+}
+
+
+
