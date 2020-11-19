@@ -11,6 +11,7 @@ export class ModalService {
 
   constructor() { }
 
+
   politicaPrivacidad() {
     this.privacidad = false;
     this.privacidadSeleccionada = true;
@@ -32,5 +33,16 @@ export class ModalService {
     }, 100);
     $('#alerta').modal('hide');
     // Abrir modal contacto y cerrar modal alerta
+    setTimeout(() => {
+    $('#contacto').modal();
+    }, 500);
+    
+  $(document).ready(() => {
+    $('#contacto').on('shown.bs.modal', () => {
+      $('#focusInput').trigger('focus');
+    });
+  });
   }
+
+
 }
