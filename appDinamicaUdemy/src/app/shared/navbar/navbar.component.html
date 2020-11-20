@@ -1,7 +1,8 @@
 <div class="container fixed-top colorBody1">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark ColorNavbar2 mt-1">
     <a class="navbar-brand ml-3">
-      <img src="../../../assets/img/ojo.png" width="40" height="40">
+      <img *ngIf="ojo" (click)="onClick1()" src="../../../assets/img/ojo.png" width="40" height="40">
+      <img *ngIf="!ojo" (click)="onClick2()" src="../../../assets/img/ojo.png" width="40" height="40">
     </a>
     <a class="navbar-brand colorName4 ml-3">
       <strong class="text-uppercase federica6">FedericaDJ</strong>
@@ -30,6 +31,15 @@
             <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/Ajustes']">Ajustes</a>
           </li>
         </ul>
+
+        <i *ngIf="login" data-toggle="tooltip" data-placement="left" title="Admin Login" (click)="entrar()"
+          class="fas fa-sign-in-alt mr-5 colorNegro16 fa-lg"></i>
+
+          <div class="input-group-sm mr-4 ml-5" *ngIf="input1" (keyup.enter)="inputLogin()">
+            <input type="password" name="clave" id="focusClave" [(ngModel)]="clave" placeholder="Press Enter"
+            class="form-control backInput15" aria-describedby="inputGroup-sizzing-sm">
+          </div>
+
         <div class="row">
           <div class="col text-center">
             <p class="m-2">

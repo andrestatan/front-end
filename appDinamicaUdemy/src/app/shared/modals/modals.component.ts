@@ -38,7 +38,6 @@ export class ModalsComponent implements OnInit {
 
     if(f.invalid){
       $('#contacto').modal('hide');
-      console.log(f.value)
       this.limpiarMensaje();
       const Toast = Swal.mixin({
         toast: true,
@@ -54,7 +53,6 @@ export class ModalsComponent implements OnInit {
       })
     } else {
       $('#contacto').modal('hide');
-      console.log(f.value)
       this.limpiarMensaje();
       const Toast = Swal.mixin({
         toast: true,
