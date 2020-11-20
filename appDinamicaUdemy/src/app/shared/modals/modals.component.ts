@@ -16,6 +16,11 @@ export class ModalsComponent implements OnInit {
     mensaje : ''
   };
 
+  usuarioLogin= {
+    nombre: "Federica",
+    password: "123"
+  };
+
   constructor(public modalService: ModalService) {
     this.modalService.privacidadSeleccionada = true;
   }
@@ -39,34 +44,28 @@ export class ModalsComponent implements OnInit {
     if(f.invalid){
       $('#contacto').modal('hide');
       this.limpiarMensaje();
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-right',
-        showConfirmButton: false,
-        timer: 3000
-      })
-      
-      Toast.fire({
-        icon: 'error',
-        title: 'Todos los campos son obligatorios',
-        background: 'rgb(233,233,0)',
-      })
+      this.ValidacionAcciones("","error","'Todos los campos son obligatorios'")
     } else {
       $('#contacto').modal('hide');
       this.limpiarMensaje();
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-right',
-        showConfirmButton: false,
-        timer: 3000
-      })
-      
-      Toast.fire({
-        icon: 'success',
-        title: 'Mensaje Enviado correctamente',
-        background: 'rgb(233,233,0)',
-      })
+   
     }
+  }
+
+  ValidacionAcciones(posicion,icon,titulo){
+    posicion == "" ? posicion = 'top-right': posicion
+    const Toast = Swal.mixin({
+      toast: true,
+      position: posicion,
+      showConfirmButton: false,
+      timer: 3000
+    })
+    
+    Toast.fire({
+      icon: icon,
+      title: titulo,
+      background: 'rgb(233,233,0)',
+    })
   }
 
   limpiarMensaje(){
@@ -74,5 +73,19 @@ export class ModalsComponent implements OnInit {
     this.mensaje.mensaje='';
   }
 
+  login(arr: NgForm){
 
+    if(this.usuarioLogin.nombre=="Federica" && this.usuarioLogin.password =="123"){
+      setTimeout(() => {
+        $('.navbar-collapse').collapse('hide');
+    }, 1000);
+    this.ValidacionAcciones("",'success','Inicio de Sesion Exitoso')
+    } else {
+      this.ValidacionAcciones("",'error','Inicio de Sesion Fallido')
+    }
+  }
+
+  salirLogin(){
+
+  }
 }
