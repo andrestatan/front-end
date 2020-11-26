@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modals.service';
 
 declare let $;
 @Component({
@@ -13,7 +14,9 @@ export class NavbarComponent implements OnInit {
   input1: boolean;
   clave = "";
 
-  constructor() { }
+  constructor( public modalService:ModalService) { 
+    this.modalService.ojo2= true;
+  }
 
   ngOnInit(): void {
   }
@@ -25,7 +28,9 @@ export class NavbarComponent implements OnInit {
 
 
   cerrarNavbar() {
-    $('.navbar-collapse').collapse('hide')
+    $('.navbar-collapse').collapse('hide');
+    this.login =false;
+    this.input1 = false;
   }
 
   entrar() {
@@ -49,6 +54,7 @@ export class NavbarComponent implements OnInit {
   onClick2() {
     this.ojo = true;
     this.login = true;
+    this.modalService.ojo2=false;
     $(function () {
       $('[data-toggle="tooltip"]').tooltip();
     })
@@ -71,6 +77,11 @@ export class NavbarComponent implements OnInit {
         $('#focusLogin').trigger('focus');
       });
     });
+  }
+
+  logout(){
+    this.modalService.logout();
+    this.modalService.ValidacionAcciones("top",'success','Cierre de Sesion Exitoso')
   }
 
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalService } from 'src/app/services/modals.service';
-import Swal from 'sweetalert2';
 
 declare let $: any;
 @Component({
@@ -39,12 +38,16 @@ export class ModalsComponent implements OnInit {
     this.modalService.contacto();
   }
 
+  salirLogin(){
+    $('#loginModal').modal('hide');
+  }
+
   contactoFede(f: NgForm){
 
     if(f.invalid){
       $('#contacto').modal('hide');
       this.limpiarMensaje();
-      this.ValidacionAcciones("","error","'Todos los campos son obligatorios'")
+      this.modalService.ValidacionAcciones("","error","'Todos los campos son obligatorios'")
     } else {
       $('#contacto').modal('hide');
       this.limpiarMensaje();
@@ -52,40 +55,33 @@ export class ModalsComponent implements OnInit {
     }
   }
 
-  ValidacionAcciones(posicion,icon,titulo){
-    posicion == "" ? posicion = 'top-right': posicion
-    const Toast = Swal.mixin({
-      toast: true,
-      position: posicion,
-      showConfirmButton: false,
-      timer: 3000
-    })
-    
-    Toast.fire({
-      icon: icon,
-      title: titulo,
-      background: 'rgb(233,233,0)',
-    })
-  }
-
   limpiarMensaje(){
     this.mensaje.email='';
     this.mensaje.mensaje='';
   }
 
+  limpiarUsuario(){
+    this.usuarioLogin.nombre='';
+    this.usuarioLogin.password='';
+  }
+
   login(arr: NgForm){
 
     if(this.usuarioLogin.nombre=="Federica" && this.usuarioLogin.password =="123"){
+      this.salirLogin();
+      this.modalService.online=true;
       setTimeout(() => {
         $('.navbar-collapse').collapse('hide');
     }, 1000);
-    this.ValidacionAcciones("",'success','Inicio de Sesion Exitoso')
+    this.limpiarUsuario();
+    this.modalService.ValidacionAcciones("top",'success','Inicio de Sesion Exitoso')
     } else {
-      this.ValidacionAcciones("",'error','Inicio de Sesion Fallido')
+      this.salirLogin();
+      this.modalService.online=false;
+      this.limpiarUsuario();
+      this.modalService.ValidacionAcciones("top",'error','Inicio de Sesion Fallido')
     }
   }
 
-  salirLogin(){
 
-  }
 }
