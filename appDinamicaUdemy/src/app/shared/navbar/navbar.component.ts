@@ -80,6 +80,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
+    this.cerrarNavbar;
     this.modalService.logout();
     this.modalService.ValidacionAcciones("top",'success','Cierre de Sesion Exitoso')
   }
