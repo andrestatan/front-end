@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalService } from 'src/app/services/modals.service';
-import Swal from 'sweetalert2';
 
 declare let $: any;
 @Component({
@@ -14,6 +13,11 @@ export class ModalsComponent implements OnInit {
   mensaje = {
     email : '',
     mensaje : ''
+  };
+
+  usuarioLogin= {
+    nombre: "Federica",
+    password: "123"
   };
 
   constructor(public modalService: ModalService) {
@@ -34,46 +38,49 @@ export class ModalsComponent implements OnInit {
     this.modalService.contacto();
   }
 
+  salirLogin(){
+    $('#loginModal').modal('hide');
+  }
+
   contactoFede(f: NgForm){
 
     if(f.invalid){
       $('#contacto').modal('hide');
-      console.log(f.value)
       this.limpiarMensaje();
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-right',
-        showConfirmButton: false,
-        timer: 3000
-      })
-      
-      Toast.fire({
-        icon: 'error',
-        title: 'Todos los campos son obligatorios',
-        background: 'rgb(233,233,0)',
-      })
+      this.modalService.ValidacionAcciones("","error","'Todos los campos son obligatorios'")
     } else {
       $('#contacto').modal('hide');
-      console.log(f.value)
       this.limpiarMensaje();
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-right',
-        showConfirmButton: false,
-        timer: 3000
-      })
-      
-      Toast.fire({
-        icon: 'success',
-        title: 'Mensaje Enviado correctamente',
-        background: 'rgb(233,233,0)',
-      })
+   
     }
   }
 
   limpiarMensaje(){
     this.mensaje.email='';
     this.mensaje.mensaje='';
+  }
+
+  limpiarUsuario(){
+    this.usuarioLogin.nombre='';
+    this.usuarioLogin.password='';
+  }
+
+  login(arr: NgForm){
+
+    if(this.usuarioLogin.nombre=="Federica" && this.usuarioLogin.password =="123"){
+      this.salirLogin();
+      this.modalService.online=true;
+      setTimeout(() => {
+        $('.navbar-collapse').collapse('hide');
+    }, 1000);
+    this.limpiarUsuario();
+    this.modalService.ValidacionAcciones("top",'success','Inicio de Sesion Exitoso')
+    } else {
+      this.salirLogin();
+      this.modalService.online=false;
+      this.limpiarUsuario();
+      this.modalService.ValidacionAcciones("top",'error','Inicio de Sesion Fallido')
+    }
   }
 
 
