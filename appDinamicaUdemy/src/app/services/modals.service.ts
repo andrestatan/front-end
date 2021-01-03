@@ -12,6 +12,13 @@ export class ModalService {
   online: boolean;
   ojo2: boolean;
 
+  mostrar1: boolean = true;
+  mostrar2: boolean = false;
+  mostrar3: boolean = false;
+  clase = 'btn-warning';
+  claseAlert = 'btn-outline-warning';
+  claseAlert2 = 'btn-outline-warning';
+
   constructor() { }
 
 
@@ -68,6 +75,46 @@ export class ModalService {
   logout(){
     this.online=false;
     this.ojo2=true;
+  }
+
+  pagina1(){
+    this.mostrar1= true;
+    this.mostrar2= false;
+    this.mostrar3= false;
+    this.clase = 'btn-warning';
+    this.claseAlert = 'btn-outline-warning';
+    this.claseAlert2 = 'btn-outline-warning';
+  }
+
+  pagina2(){
+    this.mostrar1= false;
+    this.mostrar2= true;
+    this.mostrar3= false;
+    this.clase = 'btn-outline-warning';
+    this.claseAlert = 'btn-warning';
+    this.claseAlert2 = 'btn-outline-warning';
+  }
+
+  pagina3(){
+    this.mostrar1= false;
+    this.mostrar2= false;
+    this.mostrar3= true;
+    this.clase = 'btn-outline-warning';
+    this.claseAlert = 'btn-outline-warning';
+    this.claseAlert2 = 'btn-warning';
+  }
+
+  cerrar(){
+    $('#modalTecnologias').modal('hide');
+
+    setTimeout(() => {
+      this.pagina1();
+      
+    }, 500);
+  }
+
+  cerrarSobreMi(){
+    $('#sobreMi').modal('hide');
   }
 
 }

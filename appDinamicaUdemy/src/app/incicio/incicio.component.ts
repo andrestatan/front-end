@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from '../services/modals.service';
 
 declare let $: any;
 @Component({
@@ -10,7 +11,7 @@ export class IncicioComponent implements OnInit {
 
   mostrarYo:boolean= true;
 
-  constructor() { }
+  constructor(public modalService:ModalService) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,11 @@ export class IncicioComponent implements OnInit {
 
   tecnologias() {
     $('#modalTecnologias').modal();
+  }
+
+  sobreMi(){
+    $('#sobreMi').modal();
+    //this.modalService.cerrarSobreMi();
   }
 
 }
