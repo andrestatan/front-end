@@ -237,3 +237,49 @@ color: yellow;
 }
 
 
+.backUltimas28 {
+  background-color: rgba(255, 255, 0, 0.212) !important;
+  color: yellow;
+  border: 10px inset yellow;
+}
+
+.tamanoYo29 {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 767px) {
+  .tamanoYo29 {
+  width: 30px;
+  height: 30px;
+ }
+ .colorNoti31, .font-weight-normal {
+  font-size: 12px !important;
+}
+}
+
+.backImgNoti30 {
+  border: 1px solid rgba(255, 255, 0, 0.3);
+}
+
+.colorNoti31 {
+  color: rgb(180, 180, 100) !important;
+  font-size: 12.5px;
+}
+
+.backNoti32 {
+  background-image: url('./assets/img/fondo2.jpg');
+  border: 4px solid rgba(255, 255, 0, 0.3);
+  border-radius: 2px;
+  padding: 15px;
+}
+
+.backNoti32:hover {
+  background-image: url('./assets/img/fondo3.jpg');
+  border: 4px solid  rgba(255, 255, 0, 0.8);
+}
+
+.backTituloNoti33 {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 0, 0.85);
+}
