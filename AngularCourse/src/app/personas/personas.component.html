@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <button class="btn btn-primary" [disabled]=habilitado (click)=validacionCampo()> Agregar Persona </button>
+            <p>{{mensaje}}</p>
+
+            <app-otras-personas></app-otras-personas>
+
+
+            <label for=""> Titulo Persona </label>
+            <input type="text" class='form-control' [(ngModel)]= 'titulo' >
+            <p>{{titulo}}</p>
+
+        </div>
+    </div>
+</div>

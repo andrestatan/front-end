@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div>
+                <label>
+                    <h4 class='subtitulo'>Primer digito</h4>
+                </label>
+                <input type="number" name="operador1" id="operador1" class="form-control" [(ngModel)]= 'primerValor' >
+            </div>
+            <br>
+            <div>
+                <label>
+                    <h4 class='subtitulo'>Segundo digito</h4>
+                </label>
+                <input type="number" name="operador2" id="operador2" class="form-control" [(ngModel)]= 'segundoValor'>
+            </div>
+            <br>
+            <button type="submit" class='btn btn-primary' (click)=procesoSuma() > sumar</button>
+            <br><br>
+            {{total}}
+        </div>
+    </div>
+</div>
