@@ -25,4 +25,10 @@ export class OperadoresComponent implements OnInit {
     }
   }
 
+  limpiar(){
+    this.primerValor = undefined;
+    this.segundoValor = undefined;
+    this.total = undefined
+  }
+
 }

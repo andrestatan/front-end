@@ -13,10 +13,12 @@ export class PersonasComponent implements OnInit {
   }
 
   habilitado = false;
-  mensaje = 'No se ha agregado ninguna Persona';
+  mensaje = '';
   titulo ='Escultor';
+  mostrar= false;
 
   validacionCampo(){
+    this.mostrar =true;
     this.mensaje = 'Persona Agregada';
   }
 
