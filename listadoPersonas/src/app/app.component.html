@@ -21,14 +21,8 @@
 </div>
 </form>
 
+<app-persona *ngFor="let personaElemento of personas; let indice = index" 
+[personaElemento] = 'personaElemento' [indice] = 'indice'>
+</app-persona>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let persona of personas; let a = index">
-        <p>{{a + 1}} - {{persona.nombre}} {{persona.apellido}}</p>
-      </div>
-    </div>
-  </div>
-</div>
