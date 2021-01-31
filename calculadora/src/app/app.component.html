@@ -4,7 +4,8 @@
 
       <h1 class="titulo">Ejercicio Calculadora</h1>
 
-      <app-operadores></app-operadores>
+      <app-operadores (totalSuma) = obtenerValor($event)></app-operadores>
+      <app-resultado [total] = total></app-resultado>
     </div>
   </div>
 </div>

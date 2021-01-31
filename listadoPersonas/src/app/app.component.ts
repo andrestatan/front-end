@@ -9,12 +9,8 @@ import { Persona } from './persona.model';
 export class AppComponent {
   personas: Persona[] = [new Persona ("Juan","Perez"), new Persona("Laura","Juarez"),new Persona("Karla","Lara")]
   titulo ='Listado de Personas';
-  nombreInput = '';
-  apellidoInput = '';
 
-
-  agregarPersona(){
-    let persona1 = new Persona(this.nombreInput, this.apellidoInput)
-    this.personas.push(persona1)
+  personaAgregada(persona: Persona){
+    this.personas.push(persona);
   }
 }
