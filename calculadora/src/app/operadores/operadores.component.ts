@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-operadores',
@@ -14,12 +14,13 @@ export class OperadoresComponent implements OnInit {
 
   primerValor: number;
   segundoValor: number;
-  resultado: string = "Resultado: ";
-  total;
+  total: number;
+  @Output() totalSuma = new EventEmitter <number> ();
 
   procesoSuma(){ 
     if(this.primerValor != undefined && this.segundoValor != undefined){
-      return this.total = this.resultado+" "+(this.primerValor + this.segundoValor)
+      this.total = this.primerValor + this.segundoValor
+      this.totalSuma.emit(this.total)
     } else {
       window.alert("Debe Llenar los dos campos")
     }
@@ -29,6 +30,7 @@ export class OperadoresComponent implements OnInit {
     this.primerValor = undefined;
     this.segundoValor = undefined;
     this.total = undefined
+    this.totalSuma.emit(this.total)
   }
 
 }
