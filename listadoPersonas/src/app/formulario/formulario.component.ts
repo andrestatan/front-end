@@ -1,5 +1,7 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { LoggingServiceService } from '../logging-service.service';
 import { Persona } from '../persona.model';
+import { PersonasService } from '../personas.service';
 
 @Component({
   selector: 'app-formulario',
@@ -8,22 +10,27 @@ import { Persona } from '../persona.model';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private LoggingService:LoggingServiceService,
+    private _persona:PersonasService) {
+      this._persona.saludar.subscribe(
+        (indic: number) => alert("El indice es: "+ (indic+1))
+      )
+     }
 
   ngOnInit(): void {
   }
 
-  @Output() personaCreada = new EventEmitter <Persona> ();
+  //@Output() personaCreada = new EventEmitter <Persona> ();
 
   //-------------------------UTILIZANDO TWO WAY BINDING
 
-  /* nombreInput = '';
+   nombreInput = '';
   apellidoInput = ''; 
   
-  agregarPersona(){
+/*   agregarPersona(){
     let persona1 = new Persona(this.nombreInput, this.apellidoInput);
     this.personaCreada.emit(persona1);
-  }  */
+  }   */
 
   //---------------------- UTILIZANDO LOCAL REFERENCE
 
@@ -34,12 +41,12 @@ export class FormularioComponent implements OnInit {
 
   // -----------------------UTILIZANDO VIEWCHILD
 
-  @ViewChild('nombreRef') nombreRef : ElementRef;
-  @ViewChild('apellidoRef') apellidoRef : ElementRef;
+/*   @ViewChild('nombreRef') nombreRef : ElementRef;
+  @ViewChild('apellidoRef') apellidoRef : ElementRef;*/
 
 
   agregarPersona(){
-    let persona1 = new Persona(this.nombreRef.nativeElement.value, this.apellidoRef.nativeElement.value);
-    this.personaCreada.emit(persona1);
-  }
+    let persona1 = new Persona(this.nombreInput, this.apellidoInput);
+    this._persona.personaAgregada(persona1)
+  } 
 }

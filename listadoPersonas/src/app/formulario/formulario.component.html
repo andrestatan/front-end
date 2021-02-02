@@ -1,18 +1,14 @@
-<form class="form-row">
-    <div class="form-group col-md-2">
-      <label for="nombre" class="sr-only" >Nombre</label>
-      <!-- <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]= nombreInput> -->
-      <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" #nombreRef>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="apellido" class="sr-only" >Apellido</label>
-      <!-- <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" [(ngModel)]= apellidoInput> -->
-      <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" #apellidoRef>
-    </div>
-    <div class="col">
-      <!-- <button type="submit" class="btn btn-primary" (click)="agregarPersona(nombreRef, apellidoRef)"> -->
-        <button type="submit" class="btn btn-primary" (click)="agregarPersona()">
-        Agregar
-      </button>
-    </div>
-    </form>
+<form class="item">
+  <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]=nombreInput>
+  <!-- <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" #nombreRef> -->
+
+
+  <input type="text" name="apellido" id="apellido" placeholder="Apellido" [(ngModel)]=apellidoInput>
+  <!-- <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" #apellidoRef> -->
+
+
+  <!-- <button type="submit" class="btn btn-primary" (click)="agregarPersona(nombreRef, apellidoRef)"> -->
+  <button type="submit" (click)="agregarPersona()">
+    +
+  </button>
+</form>
