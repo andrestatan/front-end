@@ -19,7 +19,7 @@ export class ValoresComponent implements OnInit {
 
   obtencionData(){
     let desc= this.descripcion.nativeElement.value;
-    let val= this.valor.nativeElement.value;
+    let val = parseInt(this.valor.nativeElement.value);
     let op= this.operacion.nativeElement.value
     this._presupuesto.capturaDatos(op,desc,val)
   }

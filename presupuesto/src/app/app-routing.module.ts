@@ -4,7 +4,7 @@ import { CabeceroComponent } from './cabecero/cabecero.component';
 import { ValoresComponent } from './valores/valores.component';
 
 const routes: Routes = [
-{path: '', component: CabeceroComponent, pathMatch: 'full'}
+{path: '', component: CabeceroComponent}
 ];
 
 @NgModule({

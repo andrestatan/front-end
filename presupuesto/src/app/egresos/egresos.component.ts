@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { presupuesto } from '../sercicios/presupuesto/presupuesto.module';
+import { EgresosService } from '../servicios/egresos.service';
 
 @Component({
   selector: 'app-egresos',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EgresosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private egreso: EgresosService) { }
+
+  egresos: presupuesto[];
 
   ngOnInit(): void {
+    this.egresos = this.egreso.valoresEgresos;
+  }
+
+  ngOnChanges(): void {
+    
   }
 
 }
