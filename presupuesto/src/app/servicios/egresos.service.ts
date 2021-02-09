@@ -16,4 +16,13 @@ export class EgresosService {
   capturaValores(nuevosDatos: presupuesto){
     this.egresos.push(nuevosDatos)
   }
+
+  eliminacionValores(eliminacion: number){
+    if(eliminacion < this.egresos.length){
+      this.egresos.splice(eliminacion,1);
+    } else {
+      window.alert("verifique la ubicacion del valor a eliminar")
+    }
+
+  }
 }

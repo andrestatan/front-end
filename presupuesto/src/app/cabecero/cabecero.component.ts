@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../servicios/data.service';
 
 @Component({
   selector: 'app-cabecero',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datos:DataService) { }
 
   ngOnInit(): void {
   }

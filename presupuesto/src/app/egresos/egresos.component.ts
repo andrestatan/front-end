@@ -17,5 +17,7 @@ export class EgresosComponent implements OnInit {
 
   valoresEgresos: presupuesto [];
 
-
+  eliminacionValor(i){ 
+    this.egreso.eliminacionValores(i);
+  }
 }

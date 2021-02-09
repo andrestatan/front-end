@@ -18,8 +18,11 @@ export class IngresosService {
   }
 
   eliminacionValores(eliminacion: number){
-    
-    
-    
+    if(eliminacion < this.ingresos.length){
+      this.ingresos.splice(eliminacion,1);
+    } else {
+      window.alert("verifique la ubicacion del valor a eliminar")
+    }
+
   }
 }
