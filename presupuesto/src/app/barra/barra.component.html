@@ -1,0 +1,21 @@
+<form>
+    <div class="agregar">
+        <div class="agregar_contenedor">
+            <select class="agregar_tipo" #funcion>
+                <option value="ing" selected>+</option>
+                <option value="egr">-</option>
+            </select>
+            <input type="text" class="agregar_descripcion" placeholder="Agregar Descripción" #descripcion>
+            <input type="number" class="agregar_valor" placeholder="Valor" #valor>
+            <input type="button" value="+" class="agregar_btn ion-ios-checkmark-outline" (click)=capturaDatos()/>
+        </div>
+    </div>
+  </form>
+  
+  <div class="contenedor limpiarEstilos">
+     
+      <app-ingresos></app-ingresos>
+      <app-egresos></app-egresos>
+      
+     
+</div>
