@@ -16,4 +16,10 @@ export class IngresosService {
   capturaValores(nuevosDatos: presupuesto){
     this.ingresos.push(nuevosDatos)
   }
+
+  eliminacionValores(eliminacion: number){
+    
+    
+    
+  }
 }

@@ -18,4 +18,8 @@ export class IngresosComponent implements OnInit {
 
   ingresos: presupuesto[];
 
+  eliminacionValor(i){ 
+    this.ingreso.eliminacionValores(i);
+  }
+
 }
