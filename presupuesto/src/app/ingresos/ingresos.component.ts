@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IngresosService } from '../servicios/ingresos.service';
 import { presupuesto } from '../servicios/presupuesto.model';
 
@@ -15,11 +15,16 @@ export class IngresosComponent implements OnInit {
     this.ingresos = this.ingreso.ingresos;
   }
 
+  @Output() validacion = new EventEmitter <boolean>();
 
   ingresos: presupuesto[];
 
   eliminacionValor(i){ 
+    let comprobante:boolean= true
     this.ingreso.eliminacionValores(i);
+    this.validacion.emit(comprobante);
   }
+
+  
 
 }
