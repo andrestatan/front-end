@@ -9,7 +9,7 @@
                     <div class="elemento_valor">- {{egreso.valor | number: '2.2-2'}}</div>
                     <div class="elemento_porcentaje">21%</div>
                     <div class="elemento_eliminar">
-                        <button class="elemento_eliminar--btn"><i class="ion-ios-close-outline">-</i></button>
+                        <button class="elemento_eliminar--btn" (click)=eliminacionValor(i)><i class="ion-ios-close-outline">-</i></button>
                     </div>
                 </div>
             </div>

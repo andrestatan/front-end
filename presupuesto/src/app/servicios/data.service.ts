@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges } from '@angular/core';
 import { EgresosService } from './egresos.service';
 import { IngresosService } from './ingresos.service';
 import { presupuesto } from './presupuesto.model';
@@ -10,15 +10,27 @@ export class DataService {
 
   constructor(private ing: IngresosService, private egr:EgresosService) { }
 
+
   valorDescripcion: string = undefined;
   valorValor: number= undefined;
 
   validacionesDatos(valores: presupuesto, tipoOperacion: string){
 
     if(tipoOperacion == "ing"){
-      this.ing.capturaValores(valores)
+      
     } else {
-      this.egr.capturaValores(valores)
+      
     }
   }
+
+
+  
+
+  
+
+ 
+
+
+
+
 }

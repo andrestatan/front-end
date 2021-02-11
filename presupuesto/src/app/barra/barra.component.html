@@ -12,10 +12,8 @@
     </div>
   </form>
   
+  
   <div class="contenedor limpiarEstilos">
-     
-      <app-ingresos></app-ingresos>
-      <app-egresos></app-egresos>
-      
-     
+    <app-ingresos (validacion)="updateIngreso($event)"></app-ingresos>
+    <app-egresos (validacion)="updateEgreso($event)"></app-egresos>
 </div>
