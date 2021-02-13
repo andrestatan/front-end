@@ -1,0 +1,31 @@
+<div class="cabecero">
+    <div class="presupuesto">
+        <div class="presupuesto_titulo">
+            Presupuesto Disponible:
+        </div>
+        
+        <div class="presupuesto_valor"> {{valorDisponible |number:'2.2-2'}}</div>
+        
+        <div class="presupuesto_ingreso limpiarEstilos">
+            <div class="presupuesto_ingreso--texto">Ingresos</div>
+            <div class="right">
+                <div class="presupuesto_ingreso--valor">{{sumaIngreso |number:'2.2-2'}}</div>
+                <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+            </div>
+        </div>
+        
+        <div class="presupuesto_egreso limpiarEstilos">
+            <div class="presupuesto_egreso--text">Egresos</div>
+            <div class="right limpiarEstilos">
+                <div class="presupuesto_egreso--valor">- {{sumaEgresos |number:'2.2-2'}}</div>
+                <div class="presupuesto_egreso--porcentaje">45%</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <app-add (emision)="sumaEgresos=$event" (emisorDatos)="sumaIngreso=$event" (emisionDisponible)="valorDisponible=$event"></app-add>
+  <div class="contenedor limpiarEstilos">
+    <app-ingresos (emisorDatos)="sumaIngreso=$event"></app-ingresos>
+    <app-egresos (emision)="sumaEgresos=$event"></app-egresos>
+</div>
