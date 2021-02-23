@@ -8,12 +8,12 @@ import { PersonasService } from './personas.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  personas : Persona[] =[];
+
   titulo ='Listado de Personas';
-  constructor(private _persona:PersonasService){ }
+  constructor() { }
 
   ngOnInit(){
-    this.personas = this._persona.personas;
+  
   }
 
   
