@@ -4,15 +4,5 @@
   </h1>
 </div>
 <hr>
-<div class="box">
-  <hr>
-  <app-persona *ngFor="let personaElemento of personas; let indice = index" [personaElemento]='personaElemento'
-    [indice]='indice'>
-  </app-persona>
 
-</div>
-
-<div class="box">
-  <app-formulario></app-formulario>
-
-</div>
+<router-outlet></router-outlet>
