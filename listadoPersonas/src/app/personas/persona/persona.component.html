@@ -1,10 +1,9 @@
 <div class="item">
   <ul>
     <li>
-      <a [routerLink]= '["/personas",indice]' >
+      <a [routerLink]= '["/personas",indice]' [queryParams]="{modoEdicion: '1'}">
        {{personaElemento.nombre}} {{personaElemento.apellido}}
       </a>
     </li>
   </ul>
-  
 </div>
