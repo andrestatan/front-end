@@ -7,28 +7,31 @@ import { Persona } from './persona.model';
 })
 export class PersonasService {
 
-  constructor(private _logging:LoggingServiceService) { }
+  constructor(private _logging: LoggingServiceService) { }
 
-  saludar = new EventEmitter <Number> ()
+  saludar = new EventEmitter<Number>()
 
   personas: Persona[] = [
-  new Persona("Juan", "Perez"), 
-  new Persona("Laura", "Juarez")]
+    new Persona("Juan", "Perez"),
+    new Persona("Laura", "Juarez")]
 
-  personaAgregada(persona: Persona){
+  personaAgregada(persona: Persona) {
     this._logging.enviarMensajeConsola("PersonaAgregada")
     this.personas.push(persona);
   }
 
-  encontrarPersona(indice: number){
+  encontrarPersona(indice: number) {
     let persona: Persona = this.personas[indice];
     return persona
   }
 
-  modificarPersona(indice: number, persona: Persona){
+  modificarPersona(indice: number, persona: Persona) {
     let persona1 = this.personas[indice]
-    persona1.nombre=persona.nombre;
-    persona1.apellido=persona.apellido;
+    persona1.nombre = persona.nombre;
+    persona1.apellido = persona.apellido;
+  }
 
+  eliminarPersona(indice: number) {
+    this.personas.splice(indice, 1)
   }
 }

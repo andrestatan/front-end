@@ -12,5 +12,8 @@
   <button type="submit" style="cursor: pointer;">
     +
   </button>
+
+  <button *ngIf="this.indice != null"
+  type="submit" style="cursor: pointer;" class="botonRed" (click)="eliminarPersona()"> - </button>
 </form>
 </div>

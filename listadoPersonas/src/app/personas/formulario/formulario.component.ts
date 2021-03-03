@@ -22,7 +22,9 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit(): void {
     this.indice= this._route.snapshot.params['id'];
-    if(this.indice){
+    this.modoEdicion = parseInt(this._route.snapshot.queryParams['modoEdicion']);
+    //if(this.indice){
+      if(this.modoEdicion != null && this.modoEdicion === 1){
       let persona: Persona= this._persona.encontrarPersona(this.indice);
       this.nombreInput= persona.nombre;
       this.apellidoInput = persona.apellido;
@@ -33,9 +35,10 @@ export class FormularioComponent implements OnInit {
 
   //-------------------------UTILIZANDO TWO WAY BINDING
 
-   nombreInput = '';
+  nombreInput = '';
   apellidoInput = ''; 
   indice : number;
+  modoEdicion: number;
   
 /*   agregarPersona(){
     let persona1 = new Persona(this.nombreInput, this.apellidoInput);
@@ -57,12 +60,21 @@ export class FormularioComponent implements OnInit {
 
   onGuardarPersona(){
     let persona1 = new Persona(this.nombreInput, this.apellidoInput);
-    if(this.indice){
-      this._persona.modificarPersona(this.indice,persona1)
+    //if(this.indice){
+      if(this.modoEdicion != null && this.modoEdicion === 1){
+      this._persona.modificarPersona(this.indice,persona1);
+      this.router.navigate(['personas'])
     } else {
       this._persona.personaAgregada(persona1);
       this.router.navigate(['personas'])
 
     }
   } 
+
+  eliminarPersona(){
+    if(this.indice != null){
+      this._persona.eliminarPersona(this.indice);
+      this.router.navigate(['personas'])
+    }
+  }
 }
