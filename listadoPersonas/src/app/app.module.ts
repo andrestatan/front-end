@@ -8,6 +8,7 @@ import { LoggingServiceService } from './logging-service.service';
 import { PersonasService } from './personas.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonasComponent } from './personas/personas.component';
+import { ErrorComponent } from './personas/error/error.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { PersonasComponent } from './personas/personas.component';
     PersonaComponent,
     FormularioComponent,
     PersonasComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
