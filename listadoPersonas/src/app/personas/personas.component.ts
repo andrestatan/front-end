@@ -16,13 +16,17 @@ export class PersonasComponent implements OnInit {
 
   ngOnInit() {
     this._persona.obtenerPersona().subscribe(
-      (person)=> {
-        let clave= Object.values(person)
-        for(let i=0; i< clave.length; i++){
-          let key = clave[i]
-          this.personas.push(new Persona(key.nombre, key.apellido))
+      (person)=> { 
+        if(person != undefined){
+          let clave= Object.values(person) 
+          for(let i=0; i< clave.length; i++){
+            let nombre= clave[i].nombre;
+            let apellido=clave[i].apellido
+            this.personas.push(new Persona(nombre, apellido))
+          }
+          this._persona.setPersonas(this.personas);
         }
-        this._persona.setPersonas(this.personas);
+       
     });
   };
 

@@ -1,3 +1,11 @@
+<div class="box centrado" *ngIf="!isAutenticado()">
+  <a routerLink ="/login">login</a>
+</div>
+
+<div class="box centrado" *ngIf="isAutenticado()">
+  <a style="cursor: pointer;" (click)="salir()"> Salir</a>
+</div>
+
 <div class="box" id="heading">
   <h1>
     {{titulo}}
@@ -6,3 +14,30 @@
 <hr>
 
 <router-outlet></router-outlet>
+
+
+<!--  The core Firebase JS SDK is always required and must be listed first 
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  
+ TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries 
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBOGtiVXpUWj2bRO9cvdVLOweuEbb8ZqzQ",
+    authDomain: "bdclient-df8a4.firebaseapp.com",
+    databaseURL: "https://bdclient-df8a4.firebaseio.com",
+    projectId: "bdclient-df8a4",
+    storageBucket: "bdclient-df8a4.appspot.com",
+    messagingSenderId: "193462055030",
+    appId: "1:193462055030:web:9449c2e04936e9108eef57",
+    measurementId: "G-XDW20W3PJ9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+}) -->

@@ -25,6 +25,9 @@ export class PersonasService {
 
   personaAgregada(persona: Persona) {
     this._logging.enviarMensajeConsola("PersonaAgregada")
+    if(this.personas == null){
+      this.personas = [];
+    }
     this.personas.push(persona);
     this.data.guardarPersonasPut(this.personas);
   }
@@ -38,10 +41,12 @@ export class PersonasService {
     let persona1 = this.personas[indice]
     persona1.nombre = persona.nombre;
     persona1.apellido = persona.apellido;
+    this.data.ModificarPersona(persona, indice)
   }
 
   eliminarPersona(indice: number) {
     this.personas.splice(indice, 1)
+    this.data.EliminarPersona(indice);
   }
 
 
