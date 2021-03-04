@@ -10,15 +10,23 @@ import { PersonasService } from '../personas.service';
 })
 export class PersonasComponent implements OnInit {
 
-  personas : Persona[] =[];
+  personas: Persona[] = [];
 
-  constructor(private _persona:PersonasService, private router:Router){ }
+  constructor(private _persona: PersonasService, private router: Router) { }
 
-  ngOnInit(){
-    this.personas = this._persona.personas;
-  }
+  ngOnInit() {
+    this._persona.obtenerPersona().subscribe(
+      (person)=> {
+        let clave= Object.values(person)
+        for(let i=0; i< clave.length; i++){
+          let key = clave[i]
+          this.personas.push(new Persona(key.nombre, key.apellido))
+        }
+        this._persona.setPersonas(this.personas);
+    });
+  };
 
-  agregar(){
+  agregar() {
     this.router.navigate(['personas/agregar'])
   }
 

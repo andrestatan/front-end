@@ -9,6 +9,8 @@ import { PersonasService } from './personas.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonasComponent } from './personas/personas.component';
 import { ErrorComponent } from './personas/error/error.component';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { ErrorComponent } from './personas/error/error.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [LoggingServiceService, PersonasService],
+  providers: [LoggingServiceService, PersonasService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
