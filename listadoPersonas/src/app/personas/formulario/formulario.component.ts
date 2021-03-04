@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
 import { LoggingServiceService } from '../../logging-service.service';
 import { Persona } from '../../persona.model';
 import { PersonasService } from '../../personas.service';
@@ -11,7 +12,7 @@ import { PersonasService } from '../../personas.service';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor(private LoggingService:LoggingServiceService,
+  constructor(private data:DataService,
     private _persona:PersonasService,
     private router: Router,
     private _route: ActivatedRoute) {
@@ -64,9 +65,11 @@ export class FormularioComponent implements OnInit {
       if(this.modoEdicion != null && this.modoEdicion === 1){
       this._persona.modificarPersona(this.indice,persona1);
       this.router.navigate(['personas'])
+      this.data.cargarPersonas()
     } else {
       this._persona.personaAgregada(persona1);
       this.router.navigate(['personas'])
+      this.data.cargarPersonas()
 
     }
   } 
