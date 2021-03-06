@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarraSuperiorComponent } from './barra-superior.component';
+import { EditarClienteComponent } from './editar-cliente.component';
 
-describe('BarraSuperiorComponent', () => {
-  let component: BarraSuperiorComponent;
-  let fixture: ComponentFixture<BarraSuperiorComponent>;
+describe('EditarClienteComponent', () => {
+  let component: EditarClienteComponent;
+  let fixture: ComponentFixture<EditarClienteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BarraSuperiorComponent ]
+      declarations: [ EditarClienteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BarraSuperiorComponent);
+    fixture = TestBed.createComponent(EditarClienteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
