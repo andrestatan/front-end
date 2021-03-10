@@ -11,10 +11,12 @@ import { ConfiguracionComponent } from './componentes/configuracion/configuracio
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 import { EditarClienteComponent } from './componentes/editar-cliente/editar-cliente.component';
 import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado.component';
+import { CabeceroComponent } from './componentes/cabecero/cabecero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CabeceroComponent,
     LoginComponent,
     RegistroComponent,
     ClientesComponent,
