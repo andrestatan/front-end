@@ -17,10 +17,10 @@ export class ClienteService {
   
   
   constructor(private dv:AngularFirestore) { 
-    this.clientesColeccion = dv.collection('clientes', ref => ref.orderBy('nombre','asc'));
+    this.clientesColeccion = dv.collection('cliente', ref => ref.orderBy('nombre','asc'));
   }
 
-  getClientes(): Observable <cliente[]> {
+  getClientes(): Observable <cliente[]> { 
       //obtenerClientes
       this.clientes = this.clientesColeccion.snapshotChanges().pipe(
         map(cambios => {

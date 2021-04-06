@@ -17,6 +17,7 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
 import { EditarClienteComponent } from './componentes/editar-cliente/editar-cliente.component';
 import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado.component';
 import { CabeceroComponent } from './componentes/cabecero/cabecero.component';
+import { ClienteService } from './Servicios/cliente.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { CabeceroComponent } from './componentes/cabecero/cabecero.component';
     FormsModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
