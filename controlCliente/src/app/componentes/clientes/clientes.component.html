@@ -1,4 +1,4 @@
-<section id='actions' class="py-4 mb-4 bg-light">
+<section id='actions' class="py-3 mb-4 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -27,6 +27,7 @@
                                 <th>#</th>
                                 <th>Nombre</th>
                                 <th>Saldo</th>
+                                <th></th>
                             </tr>
 
                         </thead>
@@ -34,13 +35,42 @@
                             <tr *ngFor="let cliente of clientes; let i = index">
                                 <td>{{i+1}}</td>
                                 <td>{{cliente.nombre}} {{cliente.apellido}}</td>
-                                <td>{{cliente.saldo | currency: 'USD': '$'}}</td>
+                                <td>{{cliente.saldo | currency: 'MNX': '$'}}</td>
+                                <td>
+                                    <a routerLink="/cliente/editar/{{cliente.id}}" class="btn btn-secondary">
+                                        <i class=" fas fa-angle-double-right">Editar</i>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
+            <!-- tarjetas laterales -->
+
+            <div class="col-md-3">
+                <div class="card text-center bg-danger text-white mb-3">
+                    <div class="card-body">
+                        <h3>
+                            Saldo total
+                        </h3>
+                        <h4 class="display-4">
+                            {{getSaldoTotal() | currency: 'MNX' : '$'}}
+                        </h4>
+                    </div>
+                </div>
+                <div class="card text-center bg-success text-white mb-3">
+                    <div class="card-body">
+                        <h3>
+                            Total clientes
+                        </h3>
+                        <h4 class="display-4">
+                            <i class="fas fa-users"></i> {{clientes?.length}}
+                        </h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
