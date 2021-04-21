@@ -1,1 +1,108 @@
-<p>editar-cliente works!</p>
+<header id='main-header' class="py-2 bg-info text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>
+                    <i class=" fas fa-user"></i> Editar Cliente
+                </h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<form #clienteForm="ngForm" (ngSubmit)="guardarCliente(clienteForm)">
+
+    <flash-messages></flash-messages>
+
+    <section id="actions" class="py-4 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a routerLink="/" class="btn btn-light btn-block">
+                        <i class="fas fa-arrow-left"></i> Regresar a Inicio
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success btn-block">
+                        <i class="fas fa-check"></i> Guardar Cliente
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" (click)="eliminar()" class="btn btn-danger btn-block">
+                        <i class="fas fa-trash"></i> Eliminar Cliente
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="details">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Edtiar cliente</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" id="" class="form-control" #nombre="ngModel"
+                                    [(ngModel)]="cliente.nombre"
+                                    [ngClass]="{'is-invalid' : nombre.errors && nombre.touched}" required minlength="2">
+                                <div [hidden]="!nombre.errors?.required" class="invalid-feedback">
+                                    Nombre Requerido
+                                </div>
+                                <div [hidden]="!nombre.errors?.minlength" class="invalid-feedback">
+                                    Debe contener al menos dos caracteres
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="apellido" id="" class="form-control" #apellido="ngModel"
+                                    [(ngModel)]="cliente.apellido"
+                                    [ngClass]="{'is-invalid' : apellido.errors && apellido.touched}" required
+                                    minlength="2">
+                                <div [hidden]="!apellido.errors?.required" class="invalid-feedback">
+                                    Apellido Requerido
+                                </div>
+                                <div [hidden]="!apellido.errors?.minlength" class="invalid-feedback">
+                                    Debe contener al menos dos caracteres
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="" class="form-control" #email="ngModel" required
+                                    [(ngModel)]="cliente.email"
+                                    [ngClass]="{'is-invalid' : email.errors && email.touched}"
+                                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                                <div [hidden]="!email.errors?.required" class="invalid-feedback">
+                                    Email es Requerido
+                                </div>
+                                <div [hidden]="!email.errors?.pattern" class="invalid-feedback">
+                                    Ingrese un Email Valido
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="saldo">Saldo</label>
+                                <input type="number" name="saldo" id="" class="form-control" #saldo="ngModel" required
+                                    [(ngModel)]="cliente.saldo"
+                                    [ngClass]="{'is-invalid' : saldo.errors && saldo.touched}">
+                                <div [hidden]="!saldo.errors?.required" class="invalid-feedback">
+                                    Saldo Requerido
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</form>

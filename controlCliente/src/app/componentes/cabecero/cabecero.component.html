@@ -4,5 +4,48 @@
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"> </span>
     </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul *ngIf="isLogged" class="navbar-nav">
+            <li routerLink="/" class="nav-link">
+                Inicio
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav ml-auto">
+        <li *ngIf="isLogged" class=" nav-item dropdown mr-3">
+            <a href="*" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <i class="fas fa-user"></i> Bienvenido - {{logged}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                <a routerLink="/configuracion" class="dropdown-item">
+                <i class="fas fa-cog"></i> Configuracion
+                </a>
+            </div>
+        </li>
+
+        <li *ngIf="!isLogged" class="nav-item">
+            <a routerLink="/login" class="nav-link" routerLinkActive="router-link-active">
+            <i class="fas fa-user"></i>
+            Login
+            </a>
+        </li>
+
+        <li *ngIf="!isLogged" class="nav-item">
+            <a routerLink="/registro" class="nav-link" routerLinkActive="router-link-active">
+            <i class="fas fa-user"></i>
+            Registrarse
+            </a>
+        </li>
+
+        <li *ngIf="isLogged" class="nav-item">
+            <a style="cursor: pointer;" (click)="logout()" class="nav-link">
+            <i class="fas fa-user-times"></i>
+            LogOut
+            </a>
+        </li>
+    </ul>
 </div>
 </nav>
