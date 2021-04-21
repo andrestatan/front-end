@@ -18,6 +18,9 @@ import { EditarClienteComponent } from './componentes/editar-cliente/editar-clie
 import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado.component';
 import { CabeceroComponent } from './componentes/cabecero/cabecero.component';
 import { ClienteService } from './Servicios/cliente.service';
+import { LoginService } from './Servicios/login.service';
+import { AuthGuard } from './guardianes/auth.guard';
+import { ConfiguracionService } from './Servicios/configuracion.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,7 @@ import { ClienteService } from './Servicios/cliente.service';
     FormsModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [ClienteService],
+  providers: [ClienteService, LoginService, AuthGuard, ConfiguracionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
