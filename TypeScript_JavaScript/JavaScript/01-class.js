@@ -1,6 +1,6 @@
 // Primer funcion Curso Js
 
-function holaMundo() { 
+function holaMundo() {
     let botonLabel =  document.getElementById("boton").innerHTML;
     if(botonLabel === "Da un Click"){
         document.getElementById("textoPrueba").innerHTML = "Hola soy un nuevo Mensaje";
@@ -14,7 +14,7 @@ function holaMundo() {
 
 // Calculo de si es par o impar
 
-function numeroPar(){ 
+function numeroPar(){
     let num = document.getElementById("my-input").value;
     let valor = num % 2;
     if(num != undefined && num != ''){
@@ -38,10 +38,9 @@ function calcularEdad(){
         this.crearNuevoValor("p",null,"text-danger","anios","edadMayoroMenor")
     }
 }
-
 //Funcion para crear nuevas etiquetas en el html, funcionamiento Generico
 
-function crearNuevoValor (etique, texto, clase, id, idPadre){ 
+function crearNuevoValor (etique, texto, clase, id, idPadre){
     const padre = document.getElementById(idPadre)
     let validacion_elemento = document.getElementById(id);
     validacion_elemento == null ? validacion_elemento =  validacion_elemento : validacion_elemento.remove();
